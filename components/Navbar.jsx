@@ -120,7 +120,9 @@ export default function Navbar() {
         <div className="hidden md:flex">
           <NavLink to="/contact">CONTACT</NavLink>
           <NavLink to="/about">ABOUT</NavLink>
-          <NavLink to="https://goo.gl/maps/7pr2KsuYbiAHPGNk8">LOCATION 🗺️📌</NavLink>
+          <NavLink to="https://goo.gl/maps/7pr2KsuYbiAHPGNk8">
+            LOCATION 🗺️📌
+          </NavLink>
         </div>
       </div>
     </nav>
