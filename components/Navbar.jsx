@@ -15,7 +15,7 @@ function MobileNav({ open, setOpen }) {
         open ? "-translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
     >
-      <div className="flex items-center justify-center h-20 bg-white filter drop-shadow-md">
+      <div className="flex items-center justify-center h-20 bg-amber-500 filter drop-shadow-md">
         {" "}
         {/*logo container*/}
         <div>
@@ -79,7 +79,7 @@ function MobileNav({ open, setOpen }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex items-center h-20 px-4 py-4 bg-white filter drop-shadow-md">
+    <nav className="flex items-center h-20 px-4 py-4 bg-amber-500 filter drop-shadow-md">
       <MobileNav open={open} setOpen={setOpen} />
       <div className="flex items-center w-3/12">
         <div>
