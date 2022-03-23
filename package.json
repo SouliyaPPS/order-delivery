@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
+    "@ionic/react": "^6.0.12",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "daisyui": "^2.11.1",
     "next": "^12.1.0",

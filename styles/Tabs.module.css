@@ -1,0 +1,33 @@
+.rowBottom {
+  box-shadow: 0 -5px -7px -3px #000000;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  padding: 20px 5px;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  list-style-type: none;
+}
+
+.listItem:first-child {
+  color: orange;
+  font-weight: bold;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

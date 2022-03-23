@@ -953,6 +953,24 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@ionic/core@^6.0.12":
+  version "6.0.12"
+  resolved "https://registry.npmjs.org/@ionic/core/-/core-6.0.12.tgz"
+  integrity sha512-WpcVzSXBuvdHUZuNg1NTdnF4Ur7AGNCpgc4t4lyjPcEr0j//E855gd6GtUD7imNFERdtrvVC86JTpj5t0L+OMg==
+  dependencies:
+    "@stencil/core" "^2.14.1"
+    ionicons "^6.0.0"
+    tslib "^2.1.0"
+
+"@ionic/react@^6.0.12":
+  version "6.0.12"
+  resolved "https://registry.npmjs.org/@ionic/react/-/react-6.0.12.tgz"
+  integrity sha512-u/9Y0iu5+0jxNoyoCLgJHk/Vkh8OQ/LSulTKf7EB3qWglyYrHlXd0j58dJjxM3pK8UO9PS6FAfeizatqqMxq1g==
+  dependencies:
+    "@ionic/core" "^6.0.12"
+    ionicons "^6.0.0"
+    tslib "*"
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.5"
   resolved "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.0.5.tgz"
@@ -1100,6 +1118,16 @@
   version "1.1.1"
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.1.1.tgz"
   integrity sha512-BUyKJGdDWqvWC5GEhyOiUrGNi9iJUr4CU0O2WxJL6QJhHeeA/NVBalH+FeK0r/x/W0rPymXt5s78TDS7d6lCwg==
+
+"@stencil/core@^2.14.1":
+  version "2.14.2"
+  resolved "https://registry.npmjs.org/@stencil/core/-/core-2.14.2.tgz"
+  integrity sha512-NMC5Xi8sPFJxaO4rz6CbMHuD6PteE/RJWtjrbkusmpjKRtMXkfZJPIgOrleZ4xO+vXcNyL535Ru7vUADqEsTiQ==
+
+"@stencil/core@~2.12.0":
+  version "2.12.1"
+  resolved "https://registry.npmjs.org/@stencil/core/-/core-2.12.1.tgz"
+  integrity sha512-u24TZ+FEvjnZt5ZgIkLjLpUNsO6Ml3mUZqwmqk81w6RWWz75hgB5p4RFI5rvuErFeh2xvMIGo+pNdG24XUBz1A==
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -2408,6 +2436,13 @@ internal-slot@^1.0.3:
     get-intrinsic "^1.1.0"
     has "^1.0.3"
     side-channel "^1.0.4"
+
+ionicons@^6.0.0:
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/ionicons/-/ionicons-6.0.1.tgz"
+  integrity sha512-xQekOJsxH82O7oB+3F60zeRggCdND9pJ/k0E6IJDVUGGlCj5mlyFqNgxUimytKgstPGv3S+3EmCxjefvtGgWUg==
+  dependencies:
+    "@stencil/core" "~2.12.0"
 
 is-arrayish@^0.2.1:
   version "0.2.1"
@@ -3761,10 +3796,15 @@ tsconfig-paths@^3.12.0, tsconfig-paths@^3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.8.1:
+tslib@*, tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsutils@^3.21.0:
   version "3.21.0"
