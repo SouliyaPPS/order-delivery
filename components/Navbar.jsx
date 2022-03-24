@@ -131,7 +131,17 @@
 
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+function NavLink({ to, children }) {
+  return (
+    <a
+      href={to}
+      className={`mr-2 flex md:hidden bg-white pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+    >
+      {children}
+    </a>
+  );
+}
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -158,30 +168,31 @@ function Navbar() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link
-                    activeClass="Home"
-                    to="about"
+                  <NavLink
+                    href="home"
+                    activeClass="home"
+                    to="https://recraft-shop.blogspot.com/"
                     smooth={true}
                     offset={50}
                     duration={500}
                     className="cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Home
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     activeClass="about"
-                    to="about"
+                    to="https://recraft-shop.blogspot.com/p/about-us.html"
                     smooth={true}
                     offset={50}
                     duration={500}
                     className="cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
-                  </Link>
+                  </NavLink>
 
-                  <Link
+                  <NavLink
                     activeClass="contact"
-                    to="contact"
+                    to="https://recraft-shop.blogspot.com/p/contact-us.html"
                     smooth={true}
                     offset={50}
                     duration={500}
@@ -195,16 +206,16 @@ function Navbar() {
                         alt=""
                       />
                     </button> */}
-                  </Link>
+                  </NavLink>
 
-                  <Link
+                  <NavLink
                     activeClass="work"
                     to="work"
                     smooth={true}
                     offset={50}
                     duration={500}
                     // className="w-1/1 sm:w-1/1 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-4 py-2 rounded-md text-sm font-medium"
-                  ></Link>
+                  ></NavLink>
                 </div>
               </div>
             </div>
@@ -270,33 +281,33 @@ function Navbar() {
                 ref={ref}
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
-                <Link
-                  href="/home"
+                <NavLink
+                  href="https://recraft-shop.blogspot.com/"
                   activeClass="home"
-                  to="home"
+                  to="https://recraft-shop.blogspot.com/"
                   smooth={true}
                   offset={50}
                   duration={500}
                   className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href="/about"
                   activeClass="about"
-                  to="about"
+                  to="https://recraft-shop.blogspot.com/p/about-us.html"
                   smooth={true}
                   offset={50}
                   duration={500}
                   className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   href="/contact"
-                  activeClass="work"
-                  to="work"
+                  activeClass="contact"
+                  to="https://recraft-shop.blogspot.com/p/contact-us.html"
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -310,7 +321,7 @@ function Navbar() {
                       alt=""
                     />
                   </button>
-                </Link>
+                </NavLink>
               </div>
             </div>
           )}
