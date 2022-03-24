@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { AiOutlineVerticalRight, AiOutlineVerticalLeft } from "react-icons/ai";
+// import { AiOutlineVerticalRight, AiOutlineVerticalLeft } from "react-icons/ai";
 
 const featuredProducts = [
   // "https://scontent.fvte2-3.fna.fbcdn.net/v/t39.30808-6/274356861_148182434277389_629341167391831257_n.png?_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFgzqgWUvbDP0qUZaP8tGW4v55AJIyQ1-W_nkAkjJDX5QXGZgs5eIG3TCec9cDx1ZidYT2Jl1CCGuq54DZl582D&_nc_ohc=jdBqORp0NMoAX8pzPiw&_nc_ht=scontent.fvte2-3.fna&oh=00_AT-Af2ckZvYlVeUJkJYn5dmvY03ED4D5UgblYPWOTBcmFw&oe=623F5447",
@@ -10,7 +10,7 @@ const featuredProducts = [
 
 let count = 0;
 let slideInterval;
-export default function Slider() {
+export default function A2HS() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slideRef = useRef();

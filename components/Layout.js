@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Main from "./Main";
-import TabsRender from "./Tabs";
 
 const Layout = ({ children }) => {
   return (
@@ -9,7 +8,6 @@ const Layout = ({ children }) => {
       <Navbar />
       {children}
       <Main />
-      <TabsRender />
     </>
   );
 };

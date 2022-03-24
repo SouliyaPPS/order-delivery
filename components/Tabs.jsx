@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "../styles/Tabs.module.css";
-
 function Tabs() {
   return (
     <div className={styles.rowBottom}>
       <ul className={styles.list}>
         <li className={styles.listItem}>
-          <a href="" className={styles.link}>
+          <a href="/ShopNow" className={styles.link}>
             <img
               src="https://img.icons8.com/cute-clipart/64/000000/apple-home.png"
               width="30"
@@ -17,7 +16,7 @@ function Tabs() {
           </a>
         </li>
         <li className={styles.listItem}>
-          <a href="" className={styles.link}>
+          <a href="/Products" className={styles.link}>
             <img
               src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-products-sustainable-living-flaticons-flat-flat-icons.png"
               width="30"
