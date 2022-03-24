@@ -50,6 +50,7 @@ function Main() {
       <div className="text-gray-900 pb-10">
         <A2HS />
       </div>
+      {/* https://recraft-shop.blogspot.com/ */}
       <NavLink to="https://recraft-shop.blogspot.com/">
         {installable && (
           <div

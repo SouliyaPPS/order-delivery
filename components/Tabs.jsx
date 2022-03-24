@@ -14,7 +14,7 @@ function Tabs() {
     <div className={styles.rowBottom}>
       <ul className={styles.list}>
         <li className={styles.listItem}>
-          <NavLink to="/ShopNow">
+          <NavLink to="/Home">
             <img
               src="https://img.icons8.com/cute-clipart/64/000000/apple-home.png"
               width="30"
