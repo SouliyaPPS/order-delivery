@@ -32,7 +32,7 @@ function Main() {
 
   const handleInstallClick = (e) => {
     // Hide the app provided install promotion
-    setInstallable(false);
+    setInstallable(true);
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
