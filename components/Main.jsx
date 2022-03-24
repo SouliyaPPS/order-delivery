@@ -12,7 +12,7 @@ function NavLink({ to, children }) {
 let deferredPrompt;
 
 function Main() {
-  const [installable, setInstallable] = useState(false);
+  const [installable, setInstallable] = useState(true);
 
   useEffect(() => {
     window.addEventListener("beforeinstallprompt", (e) => {
