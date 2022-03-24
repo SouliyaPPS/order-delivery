@@ -1,6 +1,6 @@
 git init
 git add .
-git commit -m "first"
+git commit -m "main"
 git branch -M main
 git remote add origin https://github.com/SouliyaPPS/order-delivery.git
 git push -u origin main
