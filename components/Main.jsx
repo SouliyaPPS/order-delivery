@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import A2HS from "./A2HS";
 
+function NavLink({ to, children }) {
+  return (
+    <a href={to} className={`mx-4`}>
+      {children}
+    </a>
+  );
+}
+
 let deferredPrompt;
 
 function Main() {
@@ -42,7 +50,7 @@ function Main() {
       <div className="text-gray-900 pb-10">
         <A2HS />
       </div>
-      <a href="/ShopNow">
+      <NavLink to="/ShopNow">
         {installable && (
           <div
             onClick={handleInstallClick}
@@ -51,7 +59,7 @@ function Main() {
             <h1 className="text-center">Shop Now 🚀</h1>
           </div>
         )}
-      </a>
+      </NavLink>
     </div>
   );
 }
