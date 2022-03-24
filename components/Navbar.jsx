@@ -169,9 +169,8 @@ function Navbar() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <NavLink
-                    href="home"
                     activeClass="home"
-                    to="https://recraft-shop.blogspot.com/"
+                    to="/ShopNow"
                     smooth={true}
                     offset={50}
                     duration={500}
@@ -181,7 +180,7 @@ function Navbar() {
                   </NavLink>
                   <NavLink
                     activeClass="about"
-                    to="https://recraft-shop.blogspot.com/p/about-us.html"
+                    to="/About"
                     smooth={true}
                     offset={50}
                     duration={500}
@@ -192,7 +191,7 @@ function Navbar() {
 
                   <NavLink
                     activeClass="contact"
-                    to="https://recraft-shop.blogspot.com/p/contact-us.html"
+                    to="/Contact"
                     smooth={true}
                     offset={50}
                     duration={500}
@@ -282,9 +281,9 @@ function Navbar() {
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
                 <NavLink
-                  href="https://recraft-shop.blogspot.com/"
+                  href="/ShopNow"
                   activeClass="home"
-                  to="https://recraft-shop.blogspot.com/"
+                  to="/ShopNow"
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -293,9 +292,9 @@ function Navbar() {
                   Home
                 </NavLink>
                 <NavLink
-                  href="/about"
+                  href="/About"
                   activeClass="about"
-                  to="https://recraft-shop.blogspot.com/p/about-us.html"
+                  to="/About"
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -305,9 +304,9 @@ function Navbar() {
                 </NavLink>
 
                 <NavLink
-                  href="/contact"
+                  href="/Contact"
                   activeClass="contact"
-                  to="https://recraft-shop.blogspot.com/p/contact-us.html"
+                  to="/Contact"
                   smooth={true}
                   offset={50}
                   duration={500}
