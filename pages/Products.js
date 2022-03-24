@@ -1,14 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import TabsRender from "../components/Tabs";
-
+import ShopNow from "../pages/ShopNow";
 function Products() {
   return (
     <div>
-      <div>
-        <Navbar />
-        <TabsRender />
-      </div>
+      <ShopNow />
       Products
     </div>
   );

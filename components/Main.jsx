@@ -50,7 +50,7 @@ function Main() {
       <div className="text-gray-900 pb-10">
         <A2HS />
       </div>
-      <NavLink to="/ShopNow">
+      <NavLink to="https://recraft-shop.blogspot.com/">
         {installable && (
           <div
             onClick={handleInstallClick}
