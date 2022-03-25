@@ -51,7 +51,7 @@ function Main() {
         <A2HS />
       </div>
       {/* https://recraft-shop.blogspot.com/ */}
-      <NavLink to="/ShopNow">
+      <NavLink to="/Home">
         {installable && (
           <div
             onClick={handleInstallClick}

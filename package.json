@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@headlessui/react": "^1.5.0",
     "@ionic/react": "^6.0.12",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "daisyui": "^2.11.1",
+    "framer-motion": "^6",
     "next": "^12.1.0",
     "next-pwa": "^5.4.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.2",
     "react-scroll": "^1.8.6",
+    "reactstrap": "^9.0.1",
     "tailwindcss-aspect-ratio": "^3.0.0"
   },
   "devDependencies": {

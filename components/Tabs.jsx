@@ -13,7 +13,7 @@ function Tabs() {
   return (
     <div className={styles.rowBottom}>
       <ul className={styles.list}>
-        <li className={styles.listItem}>
+        <li activeclassName={styles.listItem}>
           <NavLink to="/Home">
             <img
               src="https://img.icons8.com/cute-clipart/64/000000/apple-home.png"
