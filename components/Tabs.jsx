@@ -18,8 +18,12 @@ function Tabs() {
     >
       <ul className={styles.list}>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/Home">
-            <a className={styles.link}>
+          <Link
+            href="/Home"
+            component={ReactRouterLink}
+            className={styles.link}
+          >
+            <a className={styles.link} component={ReactRouterLink}>
               <img
                 src="https://img.icons8.com/cute-clipart/64/000000/apple-home.png"
                 width="30"
@@ -31,7 +35,11 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/Products">
+          <Link
+            href="/Products"
+            component={ReactRouterLink}
+            className={styles.link}
+          >
             <a className={styles.link}>
               <img
                 src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-products-sustainable-living-flaticons-flat-flat-icons.png"
@@ -44,7 +52,7 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/">
+          <Link href="/" component={ReactRouterLink} className={styles.link}>
             <a className={styles.link}>
               <img
                 src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-cart-100-most-used-icons-flaticons-flat-flat-icons.png"
@@ -57,8 +65,8 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/">
-            <a className={styles.link}>
+          <Link href="/" component={ReactRouterLink} className={styles.link}>
+            <a className={styles.link} component={ReactRouterLink}>
               <img
                 src="https://img.icons8.com/plasticine/100/000000/chat--v2.png"
                 width="30"
@@ -70,8 +78,8 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/">
-            <a className={styles.link}>
+          <Link href="/" component={ReactRouterLink} className={styles.link}>
+            <a className={styles.link} component={ReactRouterLink}>
               <img
                 src="https://img.icons8.com/clouds/100/000000/contact-card.png"
                 width="30"
