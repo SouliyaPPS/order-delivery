@@ -38,4 +38,5 @@
 .link:hover {
   color: rgb(255, 133, 11);
   font-weight: bold;
+  transition-duration: 0.1s;
 }
