@@ -52,7 +52,11 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/" component={ReactRouterLink} className={styles.link}>
+          <Link
+            href="/Cart"
+            component={ReactRouterLink}
+            className={styles.link}
+          >
             <a className={styles.link}>
               <img
                 src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-cart-100-most-used-icons-flaticons-flat-flat-icons.png"
@@ -65,7 +69,11 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/" component={ReactRouterLink} className={styles.link}>
+          <Link
+            href="/Chat"
+            component={ReactRouterLink}
+            className={styles.link}
+          >
             <a className={styles.link} component={ReactRouterLink}>
               <img
                 src="https://img.icons8.com/plasticine/100/000000/chat--v2.png"
@@ -78,7 +86,11 @@ function Tabs() {
           </Link>
         </li>
         <li className={styles.listItem} component={ReactRouterLink}>
-          <Link href="/" component={ReactRouterLink} className={styles.link}>
+          <Link
+            href="/Contact"
+            component={ReactRouterLink}
+            className={styles.link}
+          >
             <a className={styles.link} component={ReactRouterLink}>
               <img
                 src="https://img.icons8.com/clouds/100/000000/contact-card.png"

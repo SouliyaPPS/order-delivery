@@ -3,8 +3,8 @@ import ShopNow from "../pages/ShopNow";
 function Home() {
   return (
     <div>
-      <ShopNow />
       Home
+      <ShopNow />
     </div>
   );
 }
