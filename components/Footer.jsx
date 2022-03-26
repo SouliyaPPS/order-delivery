@@ -1,40 +1,35 @@
-import Link from 'next/link';
-import React from 'react';
-import styles from '../styles/Footer.module.css'
+// import Link from "next/link";
+import styles from "../styles/Footer.module.css";
+import React from "react";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
+    <footer className="px-4 sm:px-6 py-6 ">
+      <div className={styles.container}>
         <div className={styles.row}>
-          <div className={styles.col}>
-              <h1 className={styles.footerTitle}>The Menu</h1>
-              <p className={styles.footerText}>Our mission? Busting mad hunger pangs. Checkout the juicy array of the best burgers, ribs, salads and more, right here.</p>
-              <ul className={styles.footerMenu}>
-                <li className={styles.footerMenuItem}>
-                  <Link href="/shop" className={styles.footerMenuLink}> - Shop </Link>
-                </li>
-              </ul>
-          </div>
-          <div className={styles.col}>
-              <h1 className={styles.footerTitle}>Let’s Eat</h1>
-              <p className={styles.footerText}>We’ve got a couple of ways you can savour the flavour at Ribs & Burgers. Choose your weapon against hunger!</p>
-              <ul className={styles.footerMenu}>
-                <li className={styles.footerMenuItem}>
-                  <Link href="/" className={styles.footerMenuLink}> - Order Pick-Up </Link>
-                  <Link href="/" className={styles.footerMenuLink}> - Order Delivery </Link>
-                  <Link href="/" className={styles.footerMenuLink}> - Find A Store (Eat-In) </Link>
-                </li>
-              </ul>
-          </div>
           <div className={styles.col}>
             <h1 className={styles.footerTitle}>Contact Us</h1>
-            <p className={styles.footerContact}>Serbia, 34000 Kragujevac, Street BB <br /> +381/0000000 <br /> ricpewebcode@gmail.com</p>
+            <p className={styles.footerContact}>
+              Laos, Vientiane <br /> +8562023564154 <br />{" "}
+              recraft.laos@gmail.com
+            </p>
           </div>
         </div>
         <div className={styles.row}>
-            <p className={styles.copyRights}>&copy; 2022, All Rights Reserved. Powered by Miljan Peric.</p>
+          <p className={styles.copyRights}>
+            &copy; 2022, All Rights Reserved. Powered by Re-Craft.
+          </p>
         </div>
-    </div>
+      </div>
+    </footer>
+    // <footer className="px-4 sm:px-6 py-6 mt-24">
+    //   <div className="text-center text-sm text-gray-500">
+    //     <span className="dark:text-gray-100 text-gray-900 font-bold text-lg mr-2">
+    //       Re-Craft
+    //     </span>
+    //     &copy; {new Date().getFullYear()} All Rights Reserved
+    //   </div>
+    // </footer>
   );
 };
 
