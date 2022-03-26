@@ -32,6 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: rgb(222, 114, 7);
 }
 
 .link:hover {

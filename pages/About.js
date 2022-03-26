@@ -16,4 +16,4 @@ function About() {
   );
 }
 
-export default Contact;
+export default About;
