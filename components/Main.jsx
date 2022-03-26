@@ -12,7 +12,7 @@ function NavLink({ to, children }) {
 let deferredPrompt;
 
 function Main() {
-  const [installable, setInstallable] = useState();
+  const [installable, setInstallable] = useState(true);
 
   useEffect(() => {
     window.addEventListener("beforeinstallprompt", (e) => {
@@ -32,7 +32,7 @@ function Main() {
 
   const handleInstallClick = (e) => {
     // Hide the app provided install promotion
-    setInstallable(true);
+    // setInstallable(true);
     // Show the install prompt
     deferredPrompt.prompt(true);
     // Wait for the user to respond to the prompt
