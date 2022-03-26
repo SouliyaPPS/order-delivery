@@ -1,11 +1,18 @@
 import React from "react";
-import ShopNow from "./ShopNow";
+import Navbar from "../components/Navbar";
+import Tabs from "../components/Tabs";
+import Footer from "../components/Footer";
 function Chat() {
   return (
-    <div>
-      Chat
-      <ShopNow />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        Chat
+        <Tabs />
+      </div>
+
+      <Footer />
+    </>
   );
 }
 

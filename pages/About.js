@@ -1,12 +1,19 @@
 import React from "react";
-import ShopNow from "./ShopNow";
+import Navbar from "../components/Navbar";
+import Tabs from "../components/Tabs";
+import Footer from "../components/Footer";
 function About() {
   return (
-    <div>
-      About
-      <ShopNow />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        About
+        <Tabs />
+      </div>
+
+      <Footer />
+    </>
   );
 }
 
-export default About;
+export default Contact;

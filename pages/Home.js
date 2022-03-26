@@ -1,11 +1,18 @@
 import React from "react";
-import ShopNow from "../pages/ShopNow";
+import Navbar from "../components/Navbar";
+import Tabs from "../components/Tabs";
+import Footer from "../components/Footer";
 function Home() {
   return (
-    <div>
-      Home
-      <ShopNow />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        Home
+        <Tabs />
+      </div>
+
+      <Footer />
+    </>
   );
 }
 
