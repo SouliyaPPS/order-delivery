@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
-import Footer from "../components/Footer";
+
 function Contact() {
   return (
     <div>
@@ -12,13 +12,13 @@ function Contact() {
 
         <body>
           <div>
-            <h1 class="my-px px-4 sm:px-6 pb-20 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">
+            <h1 className="my-px px-4 sm:px-6 pb-20 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">
               <h4 align="center"></h4>
             </h1>
           </div>
 
           <div>
-            <h1 class="my-px px-4 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">
+            <h1 className="my-px px-4 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">
               <h4 align="center">
                 Contact us to supply the fabric scrap and get more information
                 about our products
@@ -27,7 +27,7 @@ function Contact() {
           </div>
 
           <img
-            class="items-center mx-auto"
+            className="items-center mx-auto"
             src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/sIL81wOFbRA8cH4Q2JDw.png"
             alt="Landscape picture"
             width={200}
@@ -45,10 +45,10 @@ function Contact() {
 
           <br></br>
 
-          <div className="mapouter" class="items-center mx-auto">
-            <div className="gmap_canvas" class="items-center mx-auto">
+          <div className="mapouter items-center mx-auto">
+            <div className="gmap_canvas items-center mx-auto">
               <iframe
-                class="items-center mx-auto"
+                className="items-center mx-auto"
                 width="100%"
                 height={400}
                 id="gmap_canvas"
