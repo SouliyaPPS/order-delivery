@@ -74,6 +74,12 @@ function Contact() {
               />
             </div>
           </div>
+
+          <div>
+            <h1 className="my-px px-4 sm:px-6 pb-20 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">
+              <h4 align="center"></h4>
+            </h1>
+          </div>
         </body>
         <Tabs />
       </div>
