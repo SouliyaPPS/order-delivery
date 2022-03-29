@@ -1,6 +1,8 @@
 // import { ChakraProvider } from "@chakra-ui/react";
 // import { CacheProvider } from "@emotion/react";
 // import {ThemeProvider, CssBaseline } from "@mui/material";
+// import "../styles/application.scss";
+
 import React from "react";
 import PropTypes from "prop-types";
 import createEmotionCache from "../utility/createEmotionCache";

@@ -1,23 +1,25 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import DarkMode from "../sections/DarkMode";
 
-function NavLink({ to, children }) {
-  return (
-    <a
-      href={to}
-      className={`mr-2 flex md:hidden bg-white pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
-    >
-      {children}
-    </a>
-  );
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
 }
 
-function Navbar() {
+const navigation = [
+  { name: "Home", href: "/Home" },
+  { name: "About", href: "/About" },
+  { name: "Contact", href: "/Contact" },
+];
+
+export default function Navbar() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <nav className=" fixed w-full z-10 ">
+      <nav className="fixed w-full z-10 ">
         <div className="w-full flex items-center px-4 py-4 h-14">
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center ml-0 justify-between w-full">
@@ -27,54 +29,39 @@ function Navbar() {
                 </h1>
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <NavLink
-                    activeClass="home"
-                    to="/Home"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Home
-                  </NavLink>
-                  <NavLink
-                    activeClass="about"
-                    to="/About"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    About
-                  </NavLink>
-
-                  <NavLink
-                    activeClass="contact"
-                    to="/Contact"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Contact
-                  </NavLink>
-
-                  <NavLink
-                    activeClass="work"
-                    to="work"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  ></NavLink>
+                <div className="mr-10 flex items-baseline space-x-4">
+                  {navigation.map((item) => (
+                    <Link
+                      href={item.href}
+                      key={item.name}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                      className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    >
+                      <a
+                        className={classNames(
+                          "mr-2 flex md:hidden bg-white pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                          router.route === item.href
+                            ? "border-indigo-500 text-gray-900"
+                            : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                        )}
+                        aria-current={
+                          router.route === item.href ? "page" : undefined
+                        }
+                      >
+                        {item.name}
+                      </a>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="mr-0 flex md:hidden ">
+            <div className="mr-64 flex md:hidden ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="bg-amber-500 inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-amber-500 focus:ring-white"
+                className="mr-64 bg-amber-500 inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-amber-500 focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
@@ -116,7 +103,6 @@ function Navbar() {
             </div>
           </div>
         </div>
-
         <Transition
           show={isOpen}
           enter="transition ease-out duration-100 transform"
@@ -132,47 +118,30 @@ function Navbar() {
                 ref={ref}
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
-                <NavLink
-                  href="/Home"
-                  activeClass="home"
-                  to="/Home"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  href="/About"
-                  activeClass="about"
-                  to="/About"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  About
-                </NavLink>
-
-                <NavLink
-                  href="/Contact"
-                  activeClass="contact"
-                  to="/Contact"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Contact
-                  <button className="px-1 w-1/1 sm:w-1/1">
-                    <img
-                      className="w-auto h-4"
-                      src="https://i.ibb.co/j3L3M1z/icons8-location.gif"
-                      alt=""
-                    />
-                  </button>
-                </NavLink>
+                {navigation.map((item) => (
+                  <Link
+                    href={item.href}
+                    key={item.name}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  >
+                    <a
+                      className={classNames(
+                        "mr-2 flex md:hidden bg-white pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                        router.route === item.href
+                          ? "border-indigo-500 text-gray-900"
+                          : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      )}
+                      aria-current={
+                        router.route === item.href ? "page" : undefined
+                      }
+                    >
+                      {item.name}
+                    </a>
+                  </Link>
+                ))}
 
                 <DarkMode />
               </div>
@@ -183,5 +152,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;
