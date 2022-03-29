@@ -34,7 +34,7 @@ function Contact() {
             height={200}
           />
 
-          <h4 align="center">
+          <h4 align="center" className="font-bold">
             Tel: +8562023564154 <br></br>
             Email: Recraft.laos@gmail.com <br></br>
             <a href="https://re-craft.vercel.app/">
