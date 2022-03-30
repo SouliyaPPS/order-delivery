@@ -1,0 +1,79 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+  gap: 50px;
+  justify-items: center;
+  /* padding: 10px 20px;
+  width: 100px !important; */
+}
+
+.card {
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+  box-shadow: 0 0 20px 5px #dddddd;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 170px;
+  justify-items: center;
+}
+
+.cardBody {
+  background-color: #ffaa00;
+  border-radius: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardFooterTop {
+  padding: 5px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  text-align: center;
+}
+
+.cardPrice {
+  color: #ffaa00;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardFooterMiddle {
+  padding: 5px;
+}
+
+.CardDesc {
+  text-align: center;
+  font-weight: 100;
+}
+
+.cardFooterBottom {
+  padding: 5px;
+}
+
+.cardBtn {
+  background-color: #ffaa00;
+  border-color: transparent;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  float: right;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cardBtn:hover {
+  background-color: #ffffff;
+  border-color: #ffaa00;
+  color: #ffaa00;
+}
+
+.cardBtn:active {
+  transform: translateY(2px);
+}

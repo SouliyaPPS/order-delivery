@@ -1,4 +1,11 @@
 const withPWA = require("next-pwa");
+// const withImages = require("next-images");
+
+// module.exports = withImages({
+//   images: {
+//     domains: ["imgur.com"],
+//   },
+// });
 
 module.exports = withPWA({
   productionBrowserSourceMaps: true,
@@ -6,6 +13,7 @@ module.exports = withPWA({
     domains: ["assets.vercel.com"],
     formats: ["image/avif", "image/webp"],
   },
+
   pwa: {
     dest: "public",
     register: true,

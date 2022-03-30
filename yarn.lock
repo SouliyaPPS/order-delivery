@@ -4387,7 +4387,7 @@ next-compose-plugins@^2.2.1:
 
 next-images@^1.8.4:
   version "1.8.4"
-  resolved "https://registry.npmjs.org/next-images/-/next-images-1.8.4.tgz"
+  resolved "https://registry.yarnpkg.com/next-images/-/next-images-1.8.4.tgz#3b3d4840dae50893fc2a15906266532ec5fa58f0"
   integrity sha512-E6JV+aMxeUCh8A+cwn1xgmlh/zINSW4JC/XLNbM+PWQd5LBdfB+m1IDCAfNnGOKMo96kzw+4LsKxnX/Kldw78Q==
   dependencies:
     file-loader "^6.2.0"

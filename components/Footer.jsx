@@ -17,7 +17,8 @@ const Footer = () => {
         </div>
         <div className={styles.row}>
           <p className={styles.copyRights}>
-            &copy; 2022, All Rights Reserved. Powered by Re-Craft.
+            &copy; {new Date().getFullYear()}, All Rights Reserved. Powered by
+            Re-Craft.
           </p>
         </div>
       </div>

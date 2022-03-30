@@ -7,7 +7,11 @@ module.exports = {
   ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      gridAutoRows: {
+        "2fr": "minmax(0, 2fr)",
+      },
+    },
   },
   variants: {
     extend: {},
