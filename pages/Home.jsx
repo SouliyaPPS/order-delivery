@@ -42,21 +42,21 @@ function Home() {
 
       <div>
         <h1 className="text-lg my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black to-pink-600 font-bold">
-          <h4 align="center">"One support, One reduce" </h4>
+          <h4 align="center">One support, One reduce</h4>
         </h1>
       </div>
       <div>
         <h6 className="my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black text-justify mx-auto">
-          Let's reduce the fabric scrap from the craft production in Laos by
+          Let is reduce the fabric scrap from the craft production in Laos by
           supporting the Re-craft products made from fabric scrap and everyone
           also can promote reuse and recycling to society by sharing your
-          picture with Re-Craft products on social media. 
+          picture with Re-Craft products on social media.
         </h6>
       </div>
       <br></br>
       <div>
         <h1 className="text-lg my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black to-pink-600 font-bold justify-center">
-          <h4 align="center">STAY CONNECTED </h4>
+          <h4 align="center">STAY CONNECTED</h4>
         </h1>
       </div>
       <div>
@@ -71,7 +71,11 @@ function Home() {
 
       <div className="grid grid-cols-4 mx-auto">
         <div className="rounded-md">
-          <a href="https://www.facebook.com/" target="_blank">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/6hs76UNVSk5usaPNztss.png"
               alt="Facebook"
@@ -86,7 +90,11 @@ function Home() {
         </div>
 
         <div className="rounded-md">
-          <a href="https://www.instagram.com/" target="_blank">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/SiVGiQntQs6w9IfKJOrU.png"
               alt="Instagram"
@@ -101,7 +109,11 @@ function Home() {
         </div>
 
         <div className="rounded-md">
-          <a href="https://wa.me/+8562023564154" target="_blank">
+          <a
+            href="https://wa.me/+8562023564154"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/2PQrdSjHEah2N7wM4oGQ.png"
               alt="Whatsapp"
@@ -116,7 +128,11 @@ function Home() {
         </div>
 
         <div className="rounded-md">
-          <a href="https://re-craft.whats.bz/" target="_blank">
+          <a
+            href="https://re-craft.whats.bz/"
+            target="_blank"
+            rel="noopener noreferrer"
+          D>
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/WcGegSln4UM6HcPkKnfN.png"
               alt="Website"
