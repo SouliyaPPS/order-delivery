@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="px-1 sm:px-1 pb-20">
+    <footer className="absolute inset-0 top-x-64 ">
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.col}>
