@@ -1,10 +1,51 @@
 import React from "react";
 import styles from "../styles/ListProducts.module.css";
 import CartProducts from "../components/CartProducts";
+import { useEffect, useState } from "react";
+import client from "../utility/client";
+import { Alert, CircularProgress, Grid } from "@mui/material";
 
 function ListProducts() {
+  const [state, setState] = useState({
+    products: [],
+    error: "",
+    loading: true,
+  });
+  const { loading, error, products } = state;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const products = await client.fetch(`*[_type == "product"]`);
+        setState({ products, loading: false });
+      } catch (err) {
+        setState({ loading: false, error: err.message });
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <>
+      <div>
+        {loading ? (
+          <CircularProgress />
+        ) : error ? (
+          <Alert variant="danger">{error}</Alert>
+        ) : (
+          <Grid container spacing={3}>
+            {products.map((product) => (
+              <Grid item md={4} key={product.slug}>
+                <div>{product.name}</div>
+                {/* <CartProducts
+                  product={product}
+                  addToCartHandler={addToCartHandler}
+                ></CartProducts> */}
+              </Grid>
+            ))}
+          </Grid>
+        )}
+      </div>
+
       <div className={styles.container}>
         <h3 className={styles.title}>List</h3>
       </div>
