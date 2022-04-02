@@ -1,0 +1,163 @@
+.container {
+    /*height: calc(100vh - 100px);*/
+    position: relative;
+    padding: 50px;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff0000;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px #000000;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+    margin: 40px 0;
+}
+
+.col:first-child {
+    /*height: 100%;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgContainer {
+    position: relative;
+    width: 70%;
+    height: 70%;
+}
+
+.productImg {
+    filter: drop-shadow(10px 5px 10px #ff0000);
+}
+
+.choose {
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.size {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 20px 5px #dddddd;
+    width: 60%;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.sizeImg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 25px 0 10px;
+}
+
+.sizeTitle {
+    margin: 10px 0;
+}
+
+.sizeDesc {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+}
+
+/*
+.sizeImg:nth-child(2) {
+    width: 50px;
+    height: 50px;
+}
+
+.sizeImg:nth-child(3) {
+    width: 60px;
+    height: 60px;
+}
+
+.sizeImg:last-child {
+    width: 70px;
+    height: 70px;
+}
+*/
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ff0000;
+}
+
+.add {
+    width: 60%;
+    margin-top: 30px;
+}
+
+.quantity {
+    width: 50px;
+    height: 30px;
+    outline: none;
+    border-color: #ff0000;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.toCart {
+    border-color: transparent;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    float: right;
+}
+
+.toCart:hover {
+    border-color: #ff0000;
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 50px 5px;
+    }
+
+    .row {
+        flex-direction: column;
+        display: block;
+    }
+
+    .col:first-child {
+        height: 50vh;
+    }
+
+    .col:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sizes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .size {
+        width: 100%;
+    }
+
+    .productTitle {
+        text-align: center;
+    }
+}

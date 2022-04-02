@@ -1,19 +1,18 @@
 const withPWA = require("next-pwa");
-// const withImages = require("next-images");
+const withImages = require("next-images");
 
-// module.exports = withImages({
-//   images: {
-//     domains: ["imgur.com"],
-//   },
-// });
-
-module.exports = withPWA({
-  productionBrowserSourceMaps: true,
+module.exports = withImages({
+  reactStrictMode: true,
   images: {
+    domains: ["cdn.sanity.io"],
+    domains: ["imgur.com"],
     domains: ["assets.vercel.com"],
     formats: ["image/avif", "image/webp"],
   },
+});
 
+module.exports = withPWA({
+  productionBrowserSourceMaps: true,
   pwa: {
     dest: "public",
     register: true,

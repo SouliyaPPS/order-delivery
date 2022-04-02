@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
-import Footer from "../components/Footer";
 import ListProducts from "./ListProducts";
 
 function Home() {
@@ -132,7 +131,8 @@ function Home() {
             href="https://re-craft.whats.bz/"
             target="_blank"
             rel="noopener noreferrer"
-          D>
+            D
+          >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/WcGegSln4UM6HcPkKnfN.png"
               alt="Website"

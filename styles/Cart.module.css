@@ -1,0 +1,158 @@
+.container {
+  padding: 50px;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffa200;
+  letter-spacing: 1.5px;
+  font-weight: bolder;
+  text-shadow: 1px 2px 3px #000000;
+}
+
+.row {
+  display: flex;
+  margin-top: 50px;
+}
+
+.col:first-child {
+  flex: 2;
+}
+
+.col:last-child {
+  flex: 1;
+}
+
+.table {
+  width: 90%;
+  border-spacing: 10px;
+  box-shadow: 0 0 20px 5px #dddddd;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.imgContainer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.name {
+  color: #ffa200;
+  font-weight: 500;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cartTotal {
+  box-shadow: 0 0 20px 5px #dddddd;
+  width: 100%;
+  padding: 8px 20px 20px 20px;
+  border-radius: 5px;
+}
+
+.cartTitle {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.cartText {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cartTotalPriceText {
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.cartTotalPrice {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.checkout {
+  display: block;
+  background-color: #ffa200;
+  border-color: transparent;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 50px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.checkout:hover {
+  background-color: #ffffff;
+  border-color: #ffa200;
+  color: #ffa200;
+}
+
+.cashDelivery {
+  display: block;
+  background-color: #ffa200;
+  border-color: transparent;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 50px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.cashDelivery:hover {
+  background-color: #ffffff;
+  border-color: #ffa200;
+  color: #ffa200;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 50px 5px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .col:first-child {
+    flex: unset;
+    overflow-x: auto;
+    margin-bottom: 40px;
+  }
+
+  .col:last-child {
+    flex: unset;
+  }
+
+  .table {
+    width: 90%;
+    box-shadow: unset;
+  }
+
+  .cartTotal {
+    box-shadow: unset;
+  }
+
+  .cartText {
+    border-bottom: 1px dashed #ffa200;
+  }
+}
