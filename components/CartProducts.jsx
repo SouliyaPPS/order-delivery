@@ -1,65 +1,54 @@
-import React from "react";
+import * as React from "react";
 import styles from "../styles/CartProducts.module.css";
 import NextLink from "next/link";
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Rating,
-  Typography,
-} from "@mui/material";
+import { CardActionArea, CardMedia, Rating, Typography } from "@mui/material";
 import { urlForThumbnail } from "../utility/image";
 
 function CartProducts({ product, addToCartHandler }) {
   return (
-    <Card className={styles.card}>
+    <div className={styles.cardProduct}>
       <NextLink href={`/product/${product.slug.current}`} passHref>
         <div className={styles.container}>
           <div className={styles.card}>
-            <div className="lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
-              <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+            <div className="lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 w-full h-full object-center object-cover lg:w-full lg:h-full">
+              <div className="w-full h-64 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <CardActionArea>
                   <CardMedia
                     component="img"
                     image={urlForThumbnail(product.image)}
-                    className="w-full h-full object-center object-cover group-hover:opacity-75"
-                    width={300}
-                    height={210}
+                    className="mx-auto w-full h-full object-center object-cover group-hover:opacity-75"
                   ></CardMedia>
                 </CardActionArea>
               </div>
             </div>
 
-            <div className={styles.cardFooter}>
-              <CardContent>
-                <h1 className={styles.cardTitle}>{product.name}</h1>
-                <Rating
-                  className={styles.rating}
-                  name="half-rating"
-                  defaultValue={2.5}
-                  precision={0.5}
-                  value={product.rating}
-                  readOnly
-                ></Rating>
-                <span className={styles.cardPrice}>{product.price} Kip</span>
-              </CardContent>
-              <Typography>
-                <p className={styles.CardDesc}>{product.category}</p>
-              </Typography>
-              <div className={styles.cardFooterBottom}>
-                <button
-                  className={styles.cardBtn}
-                  // onClick={() => addToCartHandler(product)}
-                >
-                  Add To Cart
-                </button>
-              </div>
+            <h1 className={styles.cardTitle}>{product.name}</h1>
+            <Rating
+              className={styles.rating}
+              name="half-rating"
+              defaultValue={2.5}
+              precision={0.5}
+              value={product.rating}
+              readOnly
+            ></Rating>
+            <h1 className={styles.cardPrice}>{product.price} Kip</h1>
+
+            <Typography className={styles.CardDesc}>
+              {product.category}
+            </Typography>
+
+            <div className={styles.cardFooterBottom}>
+              <button
+                className={styles.cardBtn}
+                // onClick={() => addToCartHandler(product)}
+              >
+                Add To Cart
+              </button>
             </div>
           </div>
         </div>
       </NextLink>
-    </Card>
+    </div>
   );
 }
 
