@@ -5,6 +5,16 @@
   justify-items: center;
   /* padding: 10px 20px;
   width: 100px !important; */
+  justify-content: center;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
 }
 
 .card {
@@ -14,6 +24,8 @@
   cursor: pointer;
   width: 170px;
   justify-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardBody {
@@ -31,13 +43,14 @@
 .cardTitle {
   font-size: 20px;
   text-align: center;
+  font-weight: bold;
 }
 
 .cardPrice {
   color: #ffaa00;
   font-weight: bold;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .cardFooterMiddle {
@@ -50,7 +63,11 @@
 }
 
 .cardFooterBottom {
-  padding: 5px;
+  padding: 10px;
+  margin: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardBtn {
@@ -66,6 +83,9 @@
   margin-bottom: 5px;
   cursor: pointer;
   font-size: 12px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardBtn:hover {

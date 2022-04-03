@@ -1,7 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import * as React from "react";
 import createEmotionServer from "@emotion/server/create-instance";
-import createEmotionCache from "../utility/createEmotionCache";
+import createCache from "@emotion/cache";
+// import createEmotionCache from "../utility/createEmotionCache";
 
 // class MyDocument extends Document {
 //   render() {
@@ -74,18 +75,25 @@ MyDocument.getInitialProps = async (ctx) => {
 
   // You can consider sharing the same emotion cache between all the SSR requests to speed up performance.
   // However, be aware that it can have global side effects.
-  const cache = createEmotionCache();
+  // const cache = createEmotionCache();
+  const cache = createCache({ key: "css" });
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   /* eslint-disable */
+  // ctx.renderPage = () =>
+  //   originalRenderPage({
+  //     enhanceApp: (App) =>
+  //       function EnhanceApp(props) {
+  //         return <App emotionCache={cache} {...props} />;
+  //       },
+  //   });
+  /* eslint-enable */
+
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) =>
-        function EnhanceApp(props) {
-          return <App emotionCache={cache} {...props} />;
-        },
+      // eslint-disable-next-line react/display-name
+      enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
     });
-  /* eslint-enable */
 
   const initialProps = await Document.getInitialProps(ctx);
   // This is important. It prevents emotion to render invalid HTML.

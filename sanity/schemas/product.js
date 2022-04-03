@@ -14,15 +14,7 @@ export default {
       type: "number",
     },
     {
-      name: "image01",
-      title: "Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: "image02",
+      name: "image",
       title: "Image",
       type: "image",
       options: {

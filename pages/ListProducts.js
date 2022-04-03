@@ -4,6 +4,13 @@ import CartProducts from "../components/CartProducts";
 import { useEffect, useState } from "react";
 import client from "../utility/client";
 import { Alert, CircularProgress, Grid } from "@mui/material";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  marginAutoItem: {
+    margin: "auto",
+  },
+}));
 
 function ListProducts() {
   const [state, setState] = useState({
@@ -24,33 +31,32 @@ function ListProducts() {
     };
     fetchData();
   }, []);
+
+  const classes = useStyles();
+
   return (
     <>
-      <div>
+      <div className={styles.container}>
+        <h3 className={styles.title}>List</h3>
+      </div>
+
+      <div className={styles.container}>
         {loading ? (
           <CircularProgress />
         ) : error ? (
           <Alert variant="danger">{error}</Alert>
         ) : (
-          <Grid container spacing={3}>
+          <Grid container spacing={2}>
             {products.map((product) => (
-              <Grid item md={4} key={product.slug}>
-                <div>{product.name}</div>
-                {/* <CartProducts
+              <Grid item md={3} key={product.slug}>
+                <CartProducts
                   product={product}
-                  addToCartHandler={addToCartHandler}
-                ></CartProducts> */}
+                  // addToCartHandler={addToCartHandler}
+                ></CartProducts>
               </Grid>
             ))}
           </Grid>
         )}
-      </div>
-
-      <div className={styles.container}>
-        <h3 className={styles.title}>List</h3>
-      </div>
-      <div className="lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 relative max-w-2xl mx-auto flex-nowrap grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 justify-between w-full h-full object-center object-cover lg:w-full lg:h-full ">
-        <CartProducts />
       </div>
     </>
   );
