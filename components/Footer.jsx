@@ -4,7 +4,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="absolute inset-0 top-x-64 ">
+    <footer>
+      <div>
+        <h6 className="my-px px-1 sm:px-1 pb-10 "></h6>
+      </div>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.col}>
@@ -21,6 +24,9 @@ const Footer = () => {
             Re-Craft.
           </p>
         </div>
+      </div>
+      <div>
+        <h6 className="my-px px-1 sm:px-1 pb-24"></h6>
       </div>
     </footer>
     // <footer className="px-4 sm:px-6 py-6 mt-24">

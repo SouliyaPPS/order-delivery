@@ -38,7 +38,7 @@ function ListProducts() {
   return (
     <>
       <div className={styles.container}>
-        <h3 className={styles.title}>List</h3>
+        <h3 className={styles.title}></h3>
       </div>
       <div className={styles.cardList}>
         <div className="scroll-m-8 md:scroll-m-0 md:max-h-screen sm:gap-6 lg:gap-8 place-self-stretch place-items-stretch hover:place-items-center grid-cols-2 gap-4 place-content-evenly flex self-auto hover:self-end hover:items-center py-1 relative max-w-4xl mx-auto ml-2 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-2 justify-center w-full h-full">

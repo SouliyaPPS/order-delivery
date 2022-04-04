@@ -1,7 +1,6 @@
 .container {
   background-color: rgba(254, 132, 55, 0.912);
-  /* padding: 10px 20px; */
-  margin-block-start: 100%;
+  padding: 10px 20px;
 }
 
 .row:first-child {
@@ -10,7 +9,7 @@
 
 .col {
   flex: 1;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .footerTitle {
