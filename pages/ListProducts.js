@@ -3,7 +3,7 @@ import styles from "../styles/ListProducts.module.css";
 import CartProducts from "../components/CartProducts";
 import { useEffect, useState } from "react";
 import client from "../utility/client";
-import { Alert, CircularProgress, Grid, Card } from "@mui/material";
+import { Alert, CircularProgress, Grid } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 // import Box from "@mui/material/Box";
 

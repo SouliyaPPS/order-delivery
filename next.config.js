@@ -1,14 +1,11 @@
 const withPWA = require("next-pwa");
 
-module.exports = {
+module.exports = withPWA({
+  productionBrowserSourceMaps: true,
   reactStrictMode: true,
   images: {
     domains: ["cdn.sanity.io"],
   },
-};
-
-module.exports = withPWA({
-  productionBrowserSourceMaps: true,
   pwa: {
     dest: "public",
     register: true,
