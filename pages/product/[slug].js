@@ -28,11 +28,11 @@ import styles from "../../styles/ListProducts.module.css";
 export default function ProductScreen(props) {
   const router = useRouter();
   const { slug } = props;
-  // const {
-  //   state: { cart },
-  //   dispatch,
-  // } = useContext(Store);
-  // const { enqueueSnackbar } = useSnackbar();
+  const {
+    state: { cart },
+    dispatch,
+  } = useContext(Store);
+  const { enqueueSnackbar } = useSnackbar();
   const [state, setState] = useState({
     product: null,
     loading: true,
@@ -55,31 +55,31 @@ export default function ProductScreen(props) {
     fetchData();
   }, []);
 
-  // const addToCartHandler = async () => {
-  //   const existItem = cart.cartItems.find((x) => x._id === product._id);
-  //   const quantity = existItem ? existItem.quantity + 1 : 1;
-  //   const { data } = await axios.get(`/api/products/${product._id}`);
-  //   if (data.countInStock < quantity) {
-  //     enqueueSnackbar("Sorry. Product is out of stock", { variant: "error" });
-  //     return;
-  //   }
-  //   dispatch({
-  //     type: "CART_ADD_ITEM",
-  //     payload: {
-  //       _key: product._id,
-  //       name: product.name,
-  //       countInStock: product.countInStock,
-  //       slug: product.slug.current,
-  //       price: product.price,
-  //       image: urlForThumbnail(product.image),
-  //       quantity,
-  //     },
-  //   });
-  //   enqueueSnackbar(`${product.name} added to the cart`, {
-  //     variant: "success",
-  //   });
-  //   router.push("/cart");
-  // };
+  const addToCartHandler = async () => {
+    const existItem = cart.cartItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      enqueueSnackbar("Sorry. Product is out of stock", { variant: "error" });
+      return;
+    }
+    dispatch({
+      type: "CART_ADD_ITEM",
+      payload: {
+        _key: product._id,
+        name: product.name,
+        countInStock: product.countInStock,
+        slug: product.slug.current,
+        price: product.price,
+        image: urlForThumbnail(product.image),
+        quantity,
+      },
+    });
+    enqueueSnackbar(`${product.name} added to the cart`, {
+      variant: "success",
+    });
+    router.push("/Cart");
+  };
 
   return (
     <div className={styles.cardList}>
@@ -164,7 +164,7 @@ export default function ProductScreen(props) {
                     </ListItem>
                     <ListItem>
                       <button
-                        // onClick={addToCartHandler}
+                        onClick={addToCartHandler}
                         className="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium text-xl antialiased md:subpixel-antialiased rounded-md text-white bg-orange-400 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                       >
                         <p>

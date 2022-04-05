@@ -16,7 +16,7 @@ function CartProducts({ product, addToCartHandler }) {
                   <CardMedia
                     component="img"
                     image={urlForThumbnail(product.image)}
-                    className="mx-auto w-full h-full object-center object-cover group-hover:opacity-75"
+                    className="mx-auto h-64 object-center object-cover group-hover:opacity-75"
                   ></CardMedia>
                 </CardActionArea>
               </div>

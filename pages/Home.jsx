@@ -68,7 +68,7 @@ function Home() {
         <h6 className="my-px px-1 sm:px-1 pb-1"></h6>
       </div>
 
-      <div className="flex grid-cols-4 mx-auto hover:space-x-4 flex-wrap justify-center">
+      <div className="flex grid-cols-4 mx-auto flex-wrap justify-center">
         <div className="rounded-md">
           <a
             href="https://www.facebook.com/"

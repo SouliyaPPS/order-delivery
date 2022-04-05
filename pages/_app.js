@@ -9,6 +9,8 @@ import createEmotionCache from "../utility/createEmotionCache";
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
 import { ThemeProvider } from "next-themes";
+import { StoreProvider } from "../utility/Store";
+import { SnackbarProvider } from "notistack";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -27,7 +29,13 @@ const MyApp = (props) => {
     // <CacheProvider value={emotionCache}>
     //   <CssBaseline />
     <ThemeProvider enableSystem={true} attribute="class">
-      <Component {...pageProps} />
+      <SnackbarProvider
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <StoreProvider>
+          <Component {...pageProps} />
+        </StoreProvider>
+      </SnackbarProvider>
     </ThemeProvider>
     // </CacheProvider>
   );
