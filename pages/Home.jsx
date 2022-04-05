@@ -146,6 +146,7 @@ function Home() {
           </a>
         </div>
       </div>
+      
       <div>
         <h6 className="my-px px-1 sm:px-1 pb-24"></h6>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
+import styles from "../styles/hr.module.css";
 
 function Contact() {
   return (
@@ -12,10 +13,89 @@ function Contact() {
 
         <body>
           <div>
-            <h1 className="my-px px-4 sm:px-6 pb-20 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">
-              <h4 align="center"></h4>
-            </h1>
+            <h6 className="my-px px-1 sm:px-1 pb-14 "></h6>
           </div>
+
+          <div className="flex grid-cols-4 mx-auto hover:space-x-4 flex-wrap justify-center">
+            <div className="rounded-md">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/6hs76UNVSk5usaPNztss.png"
+                  alt="Facebook"
+                  width={70}
+                  height={70}
+                  className="mx-auto "
+                />
+                <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+                  <h4 align="center">Facebook </h4>
+                </h1>
+              </a>
+            </div>
+
+            <div className="rounded-md">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/SiVGiQntQs6w9IfKJOrU.png"
+                  alt="Instagram"
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+                  <h4 align="center">Instagram</h4>
+                </h1>
+              </a>
+            </div>
+
+            <div className="rounded-md">
+              <a
+                href="https://wa.me/+8562023564154"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/2PQrdSjHEah2N7wM4oGQ.png"
+                  alt="Whatsapp"
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+                  <h4 align="center">Whatsapp</h4>
+                </h1>
+              </a>
+            </div>
+
+            <div className="rounded-md">
+              <a
+                href="https://re-craft.whats.bz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                D
+              >
+                <img
+                  src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/WcGegSln4UM6HcPkKnfN.png"
+                  alt="Website"
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+                  <h4 align="center">Website</h4>
+                </h1>
+              </a>
+            </div>
+          </div>
+
+          <hr className={styles.hr} />
 
           <div>
             <h1 className="my-px px-4 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-pink-600">

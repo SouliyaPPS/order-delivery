@@ -1,0 +1,16 @@
+.hr {
+  overflow: visible;
+  /* For IE */
+  padding: 0;
+  border: none;
+  border-top: medium double rgb(250, 140, 36);
+  color: rgb(250, 140, 36);
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  background: white;
+  border: 0;
+  height: 0;
+  /* Firefox... */
+  box-shadow: 0 0 10px 1px black;
+}
