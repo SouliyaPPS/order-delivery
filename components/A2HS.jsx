@@ -69,8 +69,13 @@ export default function A2HS() {
         </button>
       </div> */}
 
-      <div className="aspect-w-20 aspect-h-10">
-        <img src={featuredProducts[currentIndex]} alt="" />
+      <div className="mx-auto">
+        <img
+          src={featuredProducts[currentIndex]}
+          alt=""
+          width={500}
+          height={500}
+        />
       </div>
     </div>
   );
