@@ -10,7 +10,6 @@ import client from "../utility/client";
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import { useRouter } from "next/router";
-
 // import Box from "@mui/material/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -78,6 +77,7 @@ function ListProducts() {
       <div className={styles.container}>
         <h3 className={styles.title}></h3>
       </div>
+
       <div className={styles.cardList}>
         {loading ? (
           <CircularProgress />
@@ -85,14 +85,15 @@ function ListProducts() {
           <Alert variant="danger">{error}</Alert>
         ) : (
           <Grid
+            // className="2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-12 w-full items-center my-auto mt-5 max-w-2xl grid-cols-2 mx-auto flex-wrap justify-center"
             container
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+            rowSpacing={2}
+            columnSpacing={{ xs: 1, sm: 1, md: 3 }}
             spacing={2}
             justify="center"
           >
             {products.map((product) => (
-              <Grid item md={3} key={product.slug}>
+              <Grid item md={6} key={product.slug}>
                 <CartProducts
                   product={product}
                   addToCartHandler={addToCartHandler}

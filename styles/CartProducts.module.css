@@ -12,9 +12,9 @@
 
 .Width {
   width: 375px !important;
-  height: 667px !important;
-  /* width: auto !important;
-    height: auto !important; */
+  /* height: 667px !important; */
+  /* width: auto !important; */
+  height: auto !important;
   grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
   display: grid !important;
   justify-content: center;
@@ -25,9 +25,9 @@
 
 .HomeWidth {
   width: 375px !important;
-  height: 667px !important;
-  /* width: auto !important;
-  height: auto !important; */
+  /* height: 667px !important; */
+  /* width: auto !important; */
+  height: auto !important;
   grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
   display: grid !important;
   justify-content: center;
