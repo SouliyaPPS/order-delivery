@@ -19,6 +19,14 @@
   margin-right: auto;
 }
 
+.ListProducts {
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+  display: grid !important;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.1em;
+}
+
 .rating {
   display: flex;
   justify-items: center;

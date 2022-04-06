@@ -15,16 +15,16 @@ function Home() {
           alt="Landscape picture"
           width={500}
           height={500}
-          className="mx-auto place-content-center pl-4"
+          className="mx-auto"
         />
         <img
           src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/XOv6nw7rmZBgT8fMWlY9.png"
           alt="Landscape picture"
           width={500}
           height={500}
-          className="mx-auto bg-center pl-4"
+          className="mx-auto"
         />
-        <div className="mx-auto place-content-center pl-auto justify-center">
+        <div className={styles.ListProducts}>
           <ListProducts />
         </div>
 
@@ -40,7 +40,7 @@ function Home() {
         alt="Landscape picture"
         width={500}
         height={500}
-        className="mx-auto pl-4"
+        className="mx-auto"
       />
 
       <div>
