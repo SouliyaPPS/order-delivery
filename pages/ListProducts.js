@@ -79,24 +79,28 @@ function ListProducts() {
         <h3 className={styles.title}></h3>
       </div>
       <div className={styles.cardList}>
-        <div className="scroll-m-8 md:scroll-m-0 sm:gap-6 lg:gap-8 place-self-stretch place-items-stretch hover:place-items-center grid-cols-2 gap-4 place-content-evenly flex self-auto hover:self-end hover:items-center py-1 relative max-w-4xl mx-auto ml-4 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-2 justify-center w-full h-full">
-          {loading ? (
-            <CircularProgress />
-          ) : error ? (
-            <Alert variant="danger">{error}</Alert>
-          ) : (
-            <Grid container spacing={2} justify="center">
-              {products.map((product) => (
-                <Grid item md={3} key={product.slug}>
-                  <CartProducts
-                    product={product}
-                    addToCartHandler={addToCartHandler}
-                  ></CartProducts>
-                </Grid>
-              ))}
-            </Grid>
-          )}
-        </div>
+        {loading ? (
+          <CircularProgress />
+        ) : error ? (
+          <Alert variant="danger">{error}</Alert>
+        ) : (
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+            spacing={2}
+            justify="center"
+          >
+            {products.map((product) => (
+              <Grid item md={3} key={product.slug}>
+                <CartProducts
+                  product={product}
+                  addToCartHandler={addToCartHandler}
+                ></CartProducts>
+              </Grid>
+            ))}
+          </Grid>
+        )}
       </div>
     </>
   );

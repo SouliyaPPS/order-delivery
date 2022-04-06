@@ -7,29 +7,26 @@ import styles from "../styles/CartProducts.module.css";
 function Home() {
   return (
     <>
-      <div>
-        <Navbar />
+      <Navbar />
 
-        <img
-          src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/9SZOQbw4jKQqcOkFc9k8.png"
-          alt="Landscape picture"
-          width={500}
-          height={500}
-          className="mx-auto"
-        />
-        <img
-          src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/XOv6nw7rmZBgT8fMWlY9.png"
-          alt="Landscape picture"
-          width={500}
-          height={500}
-          className="mx-auto"
-        />
-        <div className={styles.ListProducts}>
-          <ListProducts />
-        </div>
-
-        <Tabs />
+      <img
+        src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/9SZOQbw4jKQqcOkFc9k8.png"
+        alt="Landscape picture"
+        width={500}
+        height={500}
+        className="mx-auto z-auto"
+      />
+      <img
+        src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/XOv6nw7rmZBgT8fMWlY9.png"
+        alt="Landscape picture"
+        width={500}
+        height={500}
+        className="mx-auto"
+      />
+      <div className={styles.ListProducts}>
+        <ListProducts />
       </div>
+      <Tabs />
 
       <div>
         <h6 className="my-px px-1 sm:px-1 pb-10 "></h6>

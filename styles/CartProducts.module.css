@@ -24,7 +24,15 @@
   display: grid !important;
   justify-content: center;
   align-items: center;
-  margin-left: 0.1em;
+  margin-left: 1em;
+}
+
+.Products {
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+  display: grid !important;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.1em;
 }
 
 .rating {
@@ -36,14 +44,16 @@
 }
 
 .card {
-  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr)); */
   box-shadow: 0 0 20px 5px #dddddd;
   border-radius: 10px;
   cursor: pointer;
-  width: 170px;
+  width: 165px;
   justify-items: center;
   justify-content: center;
   align-items: center;
+  margin-left: 0.1em;
+  margin-right: auto;
 }
 
 .cardBody {

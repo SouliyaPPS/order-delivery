@@ -4,6 +4,7 @@ import Tabs from "../components/Tabs";
 import Footer from "../components/Footer";
 import CountCartStyles from "../styles/CountCart.module.css";
 import styles from "../styles/ListProducts.module.css";
+import CartProductstyles from "../styles/CartProducts.module.css";
 import ListProducts from "./ListProducts";
 
 function Products() {
@@ -93,12 +94,14 @@ function Products() {
           </div>
         </div>
       </div>
+
+      <br />
       {/* Search Box end*/}
-      <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto">
-        <div className={styles.cardList}>
-          <ListProducts />
-        </div>
+      {/* <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto"> */}
+      <div className={CartProductstyles.Products}>
+        <ListProducts />
       </div>
+      {/* </div> */}
 
       <div className="fixed top-0 left-0 right-77 inset-x-0">
         <Tabs />
