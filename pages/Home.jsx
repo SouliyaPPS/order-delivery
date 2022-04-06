@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
 import ListProducts from "./ListProducts";
+import styles from "../styles/CartProducts.module.css";
 
 function Home() {
   return (
@@ -14,16 +15,19 @@ function Home() {
           alt="Landscape picture"
           width={500}
           height={500}
-          className="mx-auto"
+          className="mx-auto place-content-center pl-4"
         />
         <img
           src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/XOv6nw7rmZBgT8fMWlY9.png"
           alt="Landscape picture"
           width={500}
           height={500}
-          className="mx-auto"
+          className="mx-auto bg-center pl-4"
         />
-        <ListProducts />
+        <div className="mx-auto place-content-center pl-auto justify-center">
+          <ListProducts />
+        </div>
+
         <Tabs />
       </div>
 
@@ -36,7 +40,7 @@ function Home() {
         alt="Landscape picture"
         width={500}
         height={500}
-        className="mx-auto"
+        className="mx-auto pl-4"
       />
 
       <div>
@@ -146,7 +150,7 @@ function Home() {
           </a>
         </div>
       </div>
-      
+
       <div>
         <h6 className="my-px px-1 sm:px-1 pb-24"></h6>
       </div>

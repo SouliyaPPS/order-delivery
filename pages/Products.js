@@ -94,9 +94,10 @@ function Products() {
         </div>
       </div>
       {/* Search Box end*/}
-
-      <div className={styles.cardList}>
-        <ListProducts />
+      <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto">
+        <div className={styles.cardList}>
+          <ListProducts />
+        </div>
       </div>
 
       <div className="fixed top-0 left-0 right-77 inset-x-0">

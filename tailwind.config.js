@@ -11,6 +11,12 @@ module.exports = {
       gridAutoRows: {
         "2fr": "minmax(0, 2fr)",
       },
+      flex: {
+        2: "2 2 0%",
+      },
+      screens: {
+        "3xl": "1600px",
+      },
     },
   },
   variants: {
