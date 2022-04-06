@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
-import Footer from "../components/Footer";
 import CountCartStyles from "../styles/CountCart.module.css";
 import styles from "../styles/ListProducts.module.css";
 import CartProductstyles from "../styles/CartProducts.module.css";
 import ListProducts from "./ListProducts";
+import Footer from "../components/Footer";
 
 function Products() {
   return (
@@ -97,17 +97,18 @@ function Products() {
 
       <br />
       {/* Search Box end*/}
-      <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto">
-      <div className={CartProductstyles.Products}>
-        <ListProducts />
-      </div>
+      <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto w-full">
+        <div className={CartProductstyles.Width}>
+          <div className={CartProductstyles.Products}>
+            <ListProducts />
+          </div>
+          <Footer />
+        </div>
       </div>
 
       <div className="fixed top-0 left-0 right-77 inset-x-0">
         <Tabs />
       </div>
-
-      <Footer />
     </>
   );
 }
