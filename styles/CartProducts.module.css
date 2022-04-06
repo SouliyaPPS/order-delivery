@@ -44,15 +44,15 @@
 }
 
 .card {
-  /* grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
   box-shadow: 0 0 20px 5px #dddddd;
-  border-radius: 10px;
+  border-radius: 1px;
   cursor: pointer;
-  width: 165px;
+  width: 10.5em;
   justify-items: center;
   justify-content: center;
   align-items: center;
-  margin-left: 0.1em;
+  margin-left: 0.2em;
   margin-right: auto;
 }
 

@@ -97,11 +97,11 @@ function Products() {
 
       <br />
       {/* Search Box end*/}
-      {/* <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto"> */}
+      <div className="mx-auto place-content-center pl-auto justify-center ml-auto mr-auto">
       <div className={CartProductstyles.Products}>
         <ListProducts />
       </div>
-      {/* </div> */}
+      </div>
 
       <div className="fixed top-0 left-0 right-77 inset-x-0">
         <Tabs />
