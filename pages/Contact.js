@@ -161,8 +161,8 @@ function Contact() {
             </h1>
           </div>
         </body>
-        <Tabs />
       </div>
+      <Tabs />
     </div>
   );
 }
