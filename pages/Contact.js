@@ -107,14 +107,14 @@ function Contact() {
           </div>
 
           <img
-            className="items-center mx-auto"
+            className="items-center mx-auto shadow-orange-400"
             src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/sIL81wOFbRA8cH4Q2JDw.png"
             alt="Landscape picture"
             width={200}
             height={200}
           />
 
-          <h4 align="center" className="font-bold">
+          <h4 align="center" className="font-bold ">
             Tel: +8562023564154 <br></br>
             Email: Recraft.laos@gmail.com <br></br>
             <a href="https://re-craft.vercel.app/">

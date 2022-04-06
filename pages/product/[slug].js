@@ -24,6 +24,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Tabs from "../../components/Tabs";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import styles from "../../styles/ListProducts.module.css";
+import Tabstyles from "../../styles/Tabs.module.css";
 
 export default function ProductScreen(props) {
   const router = useRouter();
@@ -55,7 +56,7 @@ export default function ProductScreen(props) {
     fetchData();
   }, []);
 
-  const addToCartHandler = async () => {
+  const addToCartHandler = async (product) => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
@@ -162,16 +163,19 @@ export default function ProductScreen(props) {
                         </Grid>
                       </Grid>
                     </ListItem>
-                    <ListItem>
-                      <button
-                        onClick={addToCartHandler}
-                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium text-xl antialiased md:subpixel-antialiased rounded-md text-white bg-orange-400 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-                      >
-                        <p>
-                          <AddShoppingCartIcon /> Add to cart
-                        </p>
-                      </button>
-                    </ListItem>
+
+                    <div className={Tabstyles.AddToCartBottom}>
+                      <ListItem>
+                        <button
+                          onClick={addToCartHandler}
+                          className="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium text-xl antialiased md:subpixel-antialiased rounded-md text-white bg-orange-400 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                        >
+                          <p>
+                            <AddShoppingCartIcon /> Add to cart
+                          </p>
+                        </button>
+                      </ListItem>
+                    </div>
                   </List>
                 </Card>
               </Grid>
@@ -181,6 +185,9 @@ export default function ProductScreen(props) {
       </LayoutDetails>
       <div>
         <h6 className="my-px px-1 sm:px-1 pb-24"></h6>
+      </div>
+      <div>
+        <h6 className="my-px px-1 sm:px-1 pb-5"></h6>
       </div>
       <>
         <Tabs />

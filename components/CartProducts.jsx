@@ -40,7 +40,7 @@ function CartProducts({ product, addToCartHandler }) {
             <div className={styles.cardFooterBottom}>
               <button
                 className={styles.cardBtn}
-                // onClick={() => addToCartHandler(product)}
+                onClick={() => addToCartHandler(product)}
               >
                 Add To Cart
               </button>

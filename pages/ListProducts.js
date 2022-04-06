@@ -1,10 +1,16 @@
 import * as React from "react";
 import styles from "../styles/ListProducts.module.css";
 import CartProducts from "../components/CartProducts";
-import { useEffect, useState } from "react";
-import client from "../utility/client";
+import { useContext, useEffect, useState } from "react";
 import { Alert, CircularProgress, Grid } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
+import { Store } from "../utility/Store";
+import { urlForThumbnail } from "../utility/image";
+import client from "../utility/client";
+import { useSnackbar } from "notistack";
+import axios from "axios";
+import { useRouter } from "next/router";
+
 // import Box from "@mui/material/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ListProducts() {
+  const {
+    state: { cart },
+    dispatch,
+  } = useContext(Store);
+  const router = useRouter();
+  const { enqueueSnackbar } = useSnackbar();
   const [state, setState] = useState({
     products: [],
     error: "",
@@ -32,6 +44,32 @@ function ListProducts() {
     };
     fetchData();
   }, []);
+
+  const addToCartHandler = async (product) => {
+    const existItem = cart.cartItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      enqueueSnackbar("Sorry. Product is out of stock", { variant: "error" });
+      return;
+    }
+    dispatch({
+      type: "CART_ADD_ITEM",
+      payload: {
+        _key: product._id,
+        name: product.name,
+        countInStock: product.countInStock,
+        slug: product.slug.current,
+        price: product.price,
+        image: urlForThumbnail(product.image),
+        quantity,
+      },
+    });
+    enqueueSnackbar(`${product.name} added to the cart`, {
+      variant: "success",
+    });
+    router.push("/Cart");
+  };
 
   const classes = useStyles();
 
@@ -52,7 +90,7 @@ function ListProducts() {
                 <Grid item md={3} key={product.slug}>
                   <CartProducts
                     product={product}
-                    // addToCartHandler={addToCartHandler}
+                    addToCartHandler={addToCartHandler}
                   ></CartProducts>
                 </Grid>
               ))}

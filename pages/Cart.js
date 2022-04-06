@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
-import Footer from "../components/Footer";
 import {
   Box,
   Button,
@@ -33,6 +32,7 @@ import styles from "../styles/ListProducts.module.css";
 import { withStyles } from "@material-ui/core/styles";
 import MuiLink from "@material-ui/core/Link";
 import ShoppingCartCheckoutRoundedIcon from "@mui/icons-material/ShoppingCartCheckoutRounded";
+import Tabstyles from "../styles/Tabs.module.css";
 
 function Cart() {
   const router = useRouter();
@@ -206,62 +206,63 @@ function Cart() {
             </div>
           )}
           <br />
-          <Grid
-            item
-            md={5}
-            xs={12}
-            alignItems="center"
-            container
-            justify="center"
-            display="flex"
-            style={{
-              margin: "auto",
-            }}
-          >
-            <Card
+          <div className={Tabstyles.CheckOutBottom}>
+            <Grid
+              item
+              md={5}
+              xs={12}
+              alignItems="center"
+              container
+              justify="center"
+              display="flex"
               style={{
                 margin: "auto",
               }}
             >
-              <List>
-                <ListItem>
-                  <Typography
-                    variant="h6"
-                    style={{
-                      margin: "auto",
-                    }}
-                  >
-                    <h5 className={styles.textcard}>
-                      Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
-                      items) :{" "}
-                      {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}{" "}
-                      Kip
-                    </h5>
-                  </Typography>
-                </ListItem>
-                <ListItem>
-                  <Button
-                    onClick={() => {
-                      router.push("/shipping");
-                    }}
-                    fullWidth
-                    style={{
-                      borderRadius: 35,
-                      backgroundColor: "#FF8039",
-                      padding: "7px 14px",
-                      fontSize: "17px",
-                      fontWeight: "bold",
-                    }}
-                    variant="contained"
-                  >
-                    <p>
-                      <ShoppingCartCheckoutRoundedIcon /> Checkout
-                    </p>
-                  </Button>
-                </ListItem>
-              </List>
-            </Card>
-          </Grid>
+              <Card
+                style={{
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+                  margin: "auto",
+                }}
+              >
+                <List
+                  style={{
+                    paddingLeft: "17px",
+                    paddingRight: "17px",
+                    margin: "auto",
+                  }}
+                >
+                  <h5 className={styles.textcard}>
+                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
+                    items) :{" "}
+                    {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}{" "}
+                    Kip
+                  </h5>
+                  <ListItem>
+                    <Button
+                      onClick={() => {
+                        router.push("/shipping");
+                      }}
+                      fullWidth
+                      style={{
+                        borderRadius: 35,
+                        backgroundColor: "#FF8039",
+                        padding: "7px 14px",
+                        fontSize: "17px",
+                        fontWeight: "bold",
+                      }}
+                      variant="contained"
+                    >
+                      <p>
+                        <ShoppingCartCheckoutRoundedIcon /> Checkout
+                      </p>
+                    </Button>
+                  </ListItem>
+                </List>
+              </Card>
+            </Grid>
+          </div>
         </LayoutDetails>
 
         {/* MUI */}
@@ -461,8 +462,12 @@ function Cart() {
 
         <Tabs />
       </div>
-
-      <Footer />
+      <div>
+        <h6 className="my-px px-1 sm:px-1 pb-20"></h6>
+      </div>
+      <div>
+        <h6 className="my-px px-1 sm:px-1 pb-24"></h6>
+      </div>
     </>
   );
 }
