@@ -73,8 +73,8 @@ export default function A2HS() {
         <img
           src={featuredProducts[currentIndex]}
           alt=""
-          width={500}
-          height={500}
+          width={400}
+          height={300}
         />
       </div>
     </div>

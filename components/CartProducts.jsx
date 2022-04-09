@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "../styles/CartProducts.module.css";
 import NextLink from "next/link";
-import { CardActionArea, CardMedia, Rating, Typography } from "@mui/material";
+import { CardActionArea, CardMedia, Rating } from "@mui/material";
 import { urlForThumbnail } from "../utility/image";
 import styled from "styled-components";
 
@@ -10,11 +10,13 @@ function CartProducts({ product, addToCartHandler }) {
     <NextLink href={`/product/${product.slug.current}`} passHref>
       <Container>
         <Image>
-          <CardMedia
-            component="img"
-            image={urlForThumbnail(product.image)}
-            className="mx-auto h-64 object-center object-cover rounded-lg "
-          ></CardMedia>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image={urlForThumbnail(product.image)}
+              className="mx-auto h-64 object-center object-cover rounded-lg "
+            ></CardMedia>
+          </CardActionArea>
         </Image>
         <Description>
           <h2 className="subpixel-antialiased font-sans text-lg font-medium">
@@ -44,7 +46,7 @@ function CartProducts({ product, addToCartHandler }) {
         </Description>
       </Container>
     </NextLink>
-    
+
     // <div className=" 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full">
     // <div className={styles.cardProduct}>
     // <NextLink href={`/product/${product.slug.current}`} passHref>
