@@ -34,7 +34,7 @@ function Home() {
         </div>
 
         <img
-          src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/Em5mtzT5uYe5Fea8BORk.jpg"
+          src="https://i.ibb.co/RymdSWR/y-ORMdn1ka-R3zr-Zkqr-H1-I.png"
           alt="Landscape picture"
           width={500}
           height={500}
