@@ -19,7 +19,7 @@ function CartProducts({ product, addToCartHandler }) {
           </CardActionArea>
         </Image>
         <Description>
-          <h2 className="subpixel-antialiased font-sans text-lg font-medium">
+          <h2 className="subpixel-antialiased font-sans text-lg font-medium text-black">
             {product.name}
           </h2>
           <Rating
@@ -31,7 +31,7 @@ function CartProducts({ product, addToCartHandler }) {
             className={styles.rating}
           />
 
-          <p>{product.price} Kip</p>
+          <p className="text-black">{product.price} Kip</p>
 
           <p className={styles.CardDesc}>{product.category}</p>
 
@@ -103,7 +103,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  z-index: 10;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem /* 8px */;

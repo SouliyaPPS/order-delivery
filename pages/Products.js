@@ -1,32 +1,95 @@
 import React from "react";
+import { createTheme } from "@mui/material/styles";
+import {
+  AppBar,
+  Badge,
+  Box,
+  Button,
+  Container,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  InputBase,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  Menu,
+  MenuItem,
+  Switch,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
 import CountCartStyles from "../styles/CountCart.module.css";
 import styles from "../styles/ListProducts.module.css";
 import ListProducts from "./ListProducts";
 import Footer from "../components/Footer";
+import NextLink from "next/link";
+import classes from "../utility/classes";
+import { useContext, useEffect, useState } from "react";
+import { Store } from "../utility/Store";
+import jsCookie from "js-cookie";
+import { useRouter } from "next/router";
+import axios from "axios";
+import { useSnackbar } from "notistack";
+import { getError } from "../utility/error";
 
-function Products() {
+export default function Products({ title, description, children }) {
+  const { state, dispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
+  const { enqueueSnackbar } = useSnackbar();
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/categories`);
+        setCategories(data);
+      } catch (err) {
+        enqueueSnackbar(getError(err), { variant: "error" });
+      }
+    };
+    fetchCategories();
+  }, [enqueueSnackbar]);
+
   return (
-    <>
-      <div className="fixed top-0 left-0 inset-x-5 z-40">
-        <Navbar />
-      </div>
+    <div>
+      <Navbar className="fixed top-0 left-77 right-0 inset-x-0 z-30 " />
 
-      <div className="fixed top-0 left-0 inset-x-5 z-30">
-        <div className={CountCartStyles.col}>
-          <div className={CountCartStyles.cart}>
-            <img
-              src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cart-supermarket-flatart-icons-flat-flatarticons.png"
-              width={25}
-              height={25}
-              alt="CountCart"
-              className="items-left mx-auto"
-            />
-            <div className={CountCartStyles.counter}>0</div>
+      <NextLink href="/Cart" passHref>
+        <Link href="/Cart" className={styles.link}>
+          <div className="fixed top-1 left-44 inset-x-5 z-20 ">
+            <div className={CountCartStyles.col}>
+              <div className={CountCartStyles.cart}>
+                <img
+                  src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cart-supermarket-flatart-icons-flat-flatarticons.png"
+                  width={25}
+                  height={25}
+                  alt="CountCart"
+                  className="items-left mx-auto"
+                />
+                <div className={CountCartStyles.counter} component="span">
+                  {cart.cartItems.length > 0 ? (
+                    <Badge
+                      style={{
+                        backgroundColor: "orange",
+                      }}
+                      badgeContent={cart.cartItems.length}
+                    ></Badge>
+                  ) : (
+                    "0"
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </Link>
+      </NextLink>
 
       <div className={styles.container}>
         <h3 className={styles.title}>
@@ -97,14 +160,14 @@ function Products() {
       <br />
       {/* Search Box end*/}
 
-      <ListProducts />
-      <Footer />
+      <div className="grid -z-50">
+        <ListProducts />
+        <Footer />
+      </div>
 
       <div className="fixed top-0 left-0 right-77 inset-x-0">
         <Tabs />
       </div>
-    </>
+    </div>
   );
 }
-
-export default Products;
