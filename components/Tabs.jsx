@@ -6,7 +6,7 @@ function Tabs() {
   const [value, setValue] = React.useState(0);
   const ref = React.useRef(null);
   return (
-    <div className="fixed top-0 left-0 right-77 inset-x-0">
+    <div className="fixed top-0 left-0 right-0 inset-x-0">
       <div
         className={styles.rowBottom}
         showLabels
