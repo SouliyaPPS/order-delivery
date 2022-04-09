@@ -85,7 +85,7 @@ function ListProducts() {
           <Alert variant="danger">{error}</Alert>
         ) : (
           <Grid
-            // className="2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-12 w-full items-center my-auto mt-5 max-w-2xl grid-cols-2 mx-auto flex-wrap justify-center"
+            className="mx-auto justify-center"
             container
             rowSpacing={2}
             columnSpacing={{ xs: 1, sm: 1, md: 3 }}
@@ -93,7 +93,7 @@ function ListProducts() {
             justify="center"
           >
             {products.map((product) => (
-              <Grid item md={3} key={product.slug}>
+              <Grid item md={2} key={product.slug}>
                 <CartProducts
                   product={product}
                   addToCartHandler={addToCartHandler}

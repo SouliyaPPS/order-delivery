@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
 import ListProducts from "./ListProducts";
-import styles from "../styles/CartProducts.module.css";
 import CartProductstyles from "../styles/CartProducts.module.css";
 
 function Home() {
@@ -25,22 +24,21 @@ function Home() {
         className="mx-auto"
       />
 
+      <ListProducts />
+
+      <div>
+        <h6 className="my-px px-1 sm:px-1 pb-10 "></h6>
+      </div>
+
+      <img
+        src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/yORMdn1kaR3zrZkqrH1I.png"
+        alt="Landscape picture"
+        width={500}
+        height={500}
+        className="mx-auto"
+      />
+
       <div className={CartProductstyles.HomeWidth}>
-        <div className={styles.ListProducts}>
-          <ListProducts />
-        </div>
-        <div>
-          <h6 className="my-px px-1 sm:px-1 pb-10 "></h6>
-        </div>
-
-        <img
-          src="https://i.ibb.co/RymdSWR/y-ORMdn1ka-R3zr-Zkqr-H1-I.png"
-          alt="Landscape picture"
-          width={500}
-          height={500}
-          className="mx-auto"
-        />
-
         <div>
           <h1 className="text-lg my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black to-pink-600 font-bold">
             <h4 align="center">One support, One reduce</h4>
@@ -70,7 +68,7 @@ function Home() {
           <h6 className="my-px px-1 sm:px-1 pb-1"></h6>
         </div>
 
-        <div className="flex grid-cols-4 mx-auto flex-wrap justify-center">
+        <div className="pr-4 flex grid-cols-2 mx-auto flex-wrap justify-center">
           <div className="rounded-md">
             <a
               href="https://www.facebook.com/"
