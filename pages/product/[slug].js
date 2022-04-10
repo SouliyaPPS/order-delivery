@@ -94,7 +94,7 @@ export default function ProductScreen(props) {
             <Box sx={classes.section}>
               <NextLink href="/Home" passHref>
                 <Link>
-                  <div className="font-bold bg-gradient-to-r from-gray-100 to-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-100 text-orange-400 uppercase no-underline fixed top-0 left-0 right-77 inset-x-0">
+                  <div className="font-bold bg-gradient-to-r from-gray-100 to-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-100 text-orange-400 uppercase no-underline fixed top-0 left-0 right-64 inset-x-0">
                     <ArrowBackIcon />
                     BACK
                   </div>

@@ -59,11 +59,12 @@ export default function Products({ title, description, children }) {
 
   return (
     <div>
-      <Navbar className="fixed top-0 left-77 right-0 inset-x-0 z-30 " />
+      <Navbar className="fixed top-0 left-0 right-0 inset-x-0 z-30 " />
 
       <NextLink href="/Cart" passHref>
         <Link href="/Cart" className={styles.link}>
-          <div className="fixed top-1 left-44 inset-x-5 z-20 ">
+          <div className="fixed top-0 left-44 inset-x-6 z-30 ">
+            {/* left-44 */}
             <div className={CountCartStyles.col}>
               <div className={CountCartStyles.cart}>
                 <img
