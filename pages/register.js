@@ -21,6 +21,13 @@ import { Store } from "../utility/Store";
 import { getError } from "../utility/error";
 import styles from "../styles/ListProducts.module.css";
 import Navbar from "../components/Navbar";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import IconButton from "@mui/material/IconButton";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 
 export default function RegisterScreen() {
   const { state, dispatch } = useContext(Store);
@@ -68,6 +75,26 @@ export default function RegisterScreen() {
       },
     },
   })(MuiLink);
+
+  const [values, setValues] = React.useState({
+    password: "",
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <>
@@ -153,62 +180,110 @@ export default function RegisterScreen() {
               ></Controller>
             </ListItem>
             <ListItem>
-              <Controller
-                name="password"
-                control={control}
-                defaultValue=""
-                rules={{
-                  required: true,
-                  minLength: 6,
-                }}
-                render={({ field }) => (
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="password"
-                    label="Password"
-                    inputProps={{ type: "password" }}
-                    error={Boolean(errors.password)}
-                    helperText={
-                      errors.password
-                        ? errors.password.type === "minLength"
-                          ? "Password length is more than 5"
-                          : "Password is required"
-                        : ""
-                    }
-                    {...field}
-                  ></TextField>
-                )}
-              ></Controller>
+              <FormControl sx={{ width: "100ch" }} variant="outlined">
+                <InputLabel htmlFor="filled-adornment-password">
+                  Password
+                </InputLabel>
+                <Controller
+                  name="password"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 6,
+                  }}
+                  render={({ field }) => (
+                    <OutlinedInput
+                      id="password"
+                      type={values.showPassword ? "text" : "password"}
+                      value={values.password}
+                      onChange={handleChange("password")}
+                      variant="outlined"
+                      fullWidth
+                      label="Password"
+                      // inputProps={{ type: "password" }}
+                      error={Boolean(errors.password)}
+                      helperText={
+                        errors.password
+                          ? errors.password.type === "minLength"
+                            ? "Password length is more than 5"
+                            : "Password is required"
+                          : ""
+                      }
+                      {...field}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {values.showPassword ? (
+                              <VisibilityOff />
+                            ) : (
+                              <Visibility />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    ></OutlinedInput>
+                  )}
+                ></Controller>
+              </FormControl>
             </ListItem>
             <ListItem>
-              <Controller
-                name="confirmPassword"
-                control={control}
-                defaultValue=""
-                rules={{
-                  required: true,
-                  minLength: 6,
-                }}
-                render={({ field }) => (
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="confirmPassword"
-                    label="Confirm Password"
-                    inputProps={{ type: "password" }}
-                    error={Boolean(errors.confirmPassword)}
-                    helperText={
-                      errors.confirmPassword
-                        ? errors.confirmPassword.type === "minLength"
-                          ? "Confirm Password length is more than 5"
-                          : "Confirm Password is required"
-                        : ""
-                    }
-                    {...field}
-                  ></TextField>
-                )}
-              ></Controller>
+              <FormControl sx={{ width: "100ch" }} variant="outlined">
+                <InputLabel htmlFor="filled-adornment-password">
+                  Confirm Password
+                </InputLabel>
+                <Controller
+                  name="confirmPassword"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 6,
+                  }}
+                  render={({ field }) => (
+                    <OutlinedInput
+                      id="confirmPassword"
+                      type={values.showPassword ? "text" : "password"}
+                      value={values.password}
+                      onChange={handleChange("password")}
+                      variant="outlined"
+                      fullWidth
+                      label="Confirm Password"
+                      // inputProps={{ type: "password" }}
+                      error={Boolean(errors.confirmPassword)}
+                      helperText={
+                        errors.confirmPassword
+                          ? errors.confirmPassword.type === "minLength"
+                            ? "Confirm Password length is more than 5"
+                            : "Confirm Password is required"
+                          : ""
+                      }
+                      {...field}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {values.showPassword ? (
+                              <VisibilityOff />
+                            ) : (
+                              <Visibility />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    ></OutlinedInput>
+                  )}
+                ></Controller>
+              </FormControl>
             </ListItem>
             <ListItem>
               <Button

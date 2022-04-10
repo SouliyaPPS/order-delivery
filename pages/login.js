@@ -21,9 +21,13 @@ import jsCookie from "js-cookie";
 import { getError } from "../utility/error";
 import styles from "../styles/ListProducts.module.css";
 import Navbar from "../components/Navbar";
-import FilledInput from "@mui/material/FilledInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import IconButton from "@mui/material/IconButton";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 export default function LoginScreen() {
   const { state, dispatch } = useContext(Store);
@@ -42,6 +46,7 @@ export default function LoginScreen() {
   } = useForm();
 
   const { enqueueSnackbar } = useSnackbar();
+
   const submitHandler = async ({ email, password }) => {
     try {
       const { data } = await axios.post("/api/users/login", {
@@ -142,7 +147,7 @@ export default function LoginScreen() {
               ></Controller>
             </ListItem>
             <ListItem style={{ backgroundColor: "white", color: "black" }}>
-              <FormControl sx={{ width: "55ch" }} variant="outlined">
+              <FormControl sx={{ width: "100ch" }} variant="outlined">
                 <InputLabel htmlFor="filled-adornment-password">
                   Password
                 </InputLabel>
@@ -155,15 +160,15 @@ export default function LoginScreen() {
                     minLength: 6,
                   }}
                   render={({ field }) => (
-                    <FilledInput
+                    <OutlinedInput
+                      id="password"
                       type={values.showPassword ? "text" : "password"}
                       value={values.password}
                       onChange={handleChange("password")}
                       variant="outlined"
                       fullWidth
-                      id="filled-adornment-password"
                       label="Password"
-                      inputProps={{ type: "password" }}
+                      // inputProps={{ type: "password" }}
                       error={Boolean(errors.password)}
                       helperText={
                         errors.password
@@ -173,7 +178,23 @@ export default function LoginScreen() {
                           : ""
                       }
                       {...field}
-                    ></FilledInput>
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {values.showPassword ? (
+                              <VisibilityOff />
+                            ) : (
+                              <Visibility />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    />
                   )}
                 ></Controller>
               </FormControl>
