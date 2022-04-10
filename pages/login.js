@@ -86,19 +86,23 @@ export default function LoginScreen() {
 
   return (
     <>
-      <Navbar className="fixed top-0 left-0 right-0 inset-x-0 z-30 " />
+      <Navbar className="fixed top-0 left-0 right-0 inset-x-0 z-30" />
 
-      <div className={styles.container}>
-        <h3 className={styles.title}>
-          <img
-            className="items-center mx-auto"
-            src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/sIL81wOFbRA8cH4Q2JDw.png"
-            alt="Landscape picture"
-            width={65}
-            height={65}
-          />
-        </h3>
-      </div>
+      <NextLink href="/Home" passHref>
+        <Link href="/Home">
+          <div className={styles.container}>
+            <h3 className={styles.title}>
+              <img
+                className="items-center mx-auto"
+                src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/sIL81wOFbRA8cH4Q2JDw.png"
+                alt="Landscape picture"
+                width={65}
+                height={65}
+              />
+            </h3>
+          </div>
+        </Link>
+      </NextLink>
 
       <LayoutDetails title="Login">
         <Form onSubmit={handleSubmit(submitHandler)}>
