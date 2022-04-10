@@ -15,26 +15,25 @@ import {
 } from "@mui/material";
 import { useSnackbar } from "notistack";
 import axios from "axios";
-import { Store } from "../utility/Store";
-import { useRouter } from "next/router";
 import jsCookie from "js-cookie";
+import { useRouter } from "next/router";
+import { Store } from "../utility/Store";
 import { getError } from "../utility/error";
 import styles from "../styles/ListProducts.module.css";
 import Navbar from "../components/Navbar";
-import FilledInput from "@mui/material/FilledInput";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
   const { state, dispatch } = useContext(Store);
   const { userInfo } = state;
   const router = useRouter();
   const { redirect } = router.query;
+
   useEffect(() => {
     if (userInfo) {
       router.push(redirect || "/");
     }
   }, [router, userInfo, redirect]);
+
   const {
     handleSubmit,
     control,
@@ -42,9 +41,15 @@ export default function LoginScreen() {
   } = useForm();
 
   const { enqueueSnackbar } = useSnackbar();
-  const submitHandler = async ({ email, password }) => {
+
+  const submitHandler = async ({ name, email, password, confirmPassword }) => {
+    if (password !== confirmPassword) {
+      enqueueSnackbar("Passwords don't match", { variant: "error" });
+      return;
+    }
     try {
-      const { data } = await axios.post("/api/users/login", {
+      const { data } = await axios.post("/api/users/register", {
+        name,
         email,
         password,
       });
@@ -64,26 +69,6 @@ export default function LoginScreen() {
     },
   })(MuiLink);
 
-  const [values, setValues] = React.useState({
-    password: "",
-    showPassword: false,
-  });
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <>
       <Navbar className="fixed top-0 left-0 right-0 inset-x-0 z-30 " />
@@ -100,15 +85,45 @@ export default function LoginScreen() {
         </h3>
       </div>
 
-      <LayoutDetails title="Login">
+      <LayoutDetails title="Register">
         <Form onSubmit={handleSubmit(submitHandler)}>
           <h3 className={styles.title}>
             <Typography component="h4" variant="h4">
-              Login
+              Register
             </Typography>
           </h3>
-          <List>
-            <ListItem style={{ backgroundColor: "white", color: "black" }}>
+          <List style={{ backgroundColor: "white", color: "black" }}>
+            <ListItem>
+              <Controller
+                name="name"
+                control={control}
+                defaultValue=""
+                rules={{
+                  required: true,
+                  minLength: 2,
+                }}
+                render={({ field }) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    id="name"
+                    label="Name"
+                    inputProps={{ type: "name" }}
+                    error={Boolean(errors.name)}
+                    helperText={
+                      errors.name
+                        ? errors.name.type === "minLength"
+                          ? "Name length is more than 1"
+                          : "Name is required"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+
+            <ListItem>
               <Controller
                 name="email"
                 control={control}
@@ -137,42 +152,63 @@ export default function LoginScreen() {
                 )}
               ></Controller>
             </ListItem>
-            <ListItem style={{ backgroundColor: "white", color: "black" }}>
-              <FormControl sx={{ width: "55ch" }} variant="outlined">
-                <InputLabel htmlFor="filled-adornment-password">
-                  Password
-                </InputLabel>
-                <Controller
-                  name="password"
-                  control={control}
-                  defaultValue=""
-                  rules={{
-                    required: true,
-                    minLength: 6,
-                  }}
-                  render={({ field }) => (
-                    <FilledInput
-                      type={values.showPassword ? "text" : "password"}
-                      value={values.password}
-                      onChange={handleChange("password")}
-                      variant="outlined"
-                      fullWidth
-                      id="filled-adornment-password"
-                      label="Password"
-                      inputProps={{ type: "password" }}
-                      error={Boolean(errors.password)}
-                      helperText={
-                        errors.password
-                          ? errors.password.type === "minLength"
-                            ? "Password length is more than 5"
-                            : "Password is required"
-                          : ""
-                      }
-                      {...field}
-                    ></FilledInput>
-                  )}
-                ></Controller>
-              </FormControl>
+            <ListItem>
+              <Controller
+                name="password"
+                control={control}
+                defaultValue=""
+                rules={{
+                  required: true,
+                  minLength: 6,
+                }}
+                render={({ field }) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    id="password"
+                    label="Password"
+                    inputProps={{ type: "password" }}
+                    error={Boolean(errors.password)}
+                    helperText={
+                      errors.password
+                        ? errors.password.type === "minLength"
+                          ? "Password length is more than 5"
+                          : "Password is required"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+            <ListItem>
+              <Controller
+                name="confirmPassword"
+                control={control}
+                defaultValue=""
+                rules={{
+                  required: true,
+                  minLength: 6,
+                }}
+                render={({ field }) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    id="confirmPassword"
+                    label="Confirm Password"
+                    inputProps={{ type: "password" }}
+                    error={Boolean(errors.confirmPassword)}
+                    helperText={
+                      errors.confirmPassword
+                        ? errors.confirmPassword.type === "minLength"
+                          ? "Confirm Password length is more than 5"
+                          : "Confirm Password is required"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
             </ListItem>
             <ListItem>
               <Button
@@ -186,18 +222,15 @@ export default function LoginScreen() {
                   fontSize: "18px",
                 }}
               >
-                Login
+                Register
               </Button>
             </ListItem>
             <ListItem>
               <div className="font-medium text-lg">
-                Do not have an account ?{" "}
-                <NextLink
-                  href={`/register?redirect=${redirect || "/"}`}
-                  passHref
-                >
-                  <Link underlineHover>
-                    <CustomLink color="primary">👤Register</CustomLink>
+                Already have an account?{" "}
+                <NextLink href={`/login?redirect=${redirect || "/"}`} passHref>
+                  <Link>
+                    <CustomLink color="primary">Login</CustomLink>
                   </Link>
                 </NextLink>
               </div>

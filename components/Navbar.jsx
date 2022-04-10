@@ -9,10 +9,10 @@ function classNames(...classes) {
 }
 
 const navigation = [
-  { name: "Home", href: "/Home" },
-  { name: "Login", href: "/login" },
-  { name: "About", href: "/About" },
-  { name: "Contact", href: "/Contact" },
+  { name: "🏠 Home", href: "/Home" },
+  { name: "🙍‍♀️ Login", href: "/login" },
+  { name: "💡 About", href: "/About" },
+  { name: "📲 Contact", href: "/Contact" },
 ];
 
 export default function Navbar() {
