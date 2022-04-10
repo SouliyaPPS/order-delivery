@@ -124,16 +124,19 @@ function Cart() {
             <div className={styles.CartContainer}>
               <div className="mt-5 max-w-2xl grid-cols-2 mx-auto flex-wrap justify-center">
                 <div className="flow-root">
-                  <ul role="list" className="-my-6 divide-y divide-gray-200">
+                  <ul
+                    role="list"
+                    className="-my-6 divide-y divide-gray-200 bg-white"
+                  >
                     {cartItems.map((item) => (
                       <li key={item._key} className="flex py-6">
                         <NextLink href={`/product/${item.slug}`} passHref>
                           <Link>
-                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 ">
                               <img
                                 src={item.image}
                                 alt={item.name}
-                                className="h-full w-full object-cover object-center"
+                                className="h-full w-full object-cover object-center "
                               />
                             </div>
                           </Link>

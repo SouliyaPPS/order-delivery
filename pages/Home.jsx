@@ -40,12 +40,12 @@ function Home() {
 
       <div className={CartProductstyles.HomeWidth}>
         <div>
-          <h1 className="text-lg my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black to-pink-600 font-bold">
+          <h1 className="text-lg my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black to-pink-600 font-bold ">
             <h4 align="center">One support, One reduce</h4>
           </h1>
         </div>
         <div>
-          <h6 className="my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black text-justify mx-auto">
+          <h6 className="my-px px-4 text-transparent bg-clip-text bg-gradient-to-br text-black text-justify mx-auto ">
             Let is reduce the fabric scrap from the craft production in Laos by
             supporting the Re-craft products made from fabric scrap and everyone
             also can promote reuse and recycling to society by sharing your

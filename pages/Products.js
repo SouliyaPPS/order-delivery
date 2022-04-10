@@ -105,7 +105,7 @@ export default function Products({ title, description, children }) {
 
       {/* Search Box */}
       <div className={styles.cardList}>
-        <div className="mt-1 rounded-md inset-y-0 left-0 pl-2 flex items-center">
+        <div className="mt-1 rounded-md inset-y-0 left-0 pl-2 flex items-center text-black">
           <div className="box pt-1">
             <div className="box-wrapper">
               <div className=" bg-white rounded flex items-center w-full p-3 shadow-sm border border-gray-200">
