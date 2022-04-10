@@ -10,6 +10,7 @@ function classNames(...classes) {
 
 const navigation = [
   { name: "Home", href: "/Home" },
+  { name: "Login", href: "/login" },
   { name: "About", href: "/About" },
   { name: "Contact", href: "/Contact" },
 ];
@@ -23,7 +24,7 @@ export default function Navbar() {
         <div className="w-full flex items-center px-4 py-4 h-14">
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center ml-0 justify-between w-full">
-              <div className="flex justify-center  items-center flex-shrink-0 ">
+              <div className="flex justify-center items-center flex-shrink-0 ">
                 <h1 className=" font-bold text-xl cursor-pointer">
                   <div className="flex items-center w-13/12"></div>
                 </h1>
@@ -116,7 +117,7 @@ export default function Navbar() {
             <div className="md:hidden" id="mobile-menu">
               <div
                 ref={ref}
-                className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
+                className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl text-black hover:text-white"
               >
                 {navigation.map((item) => (
                   <Link
@@ -125,13 +126,13 @@ export default function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    className="cursor-pointer hover:bg-amber-500 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium shadow-xl"
                   >
                     <a
                       className={classNames(
-                        "mr-2 flex md:hidden bg-white pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                        "mr-2 flex md:hidden bg-white pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer hover:bg-amber-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium shadow-lg",
                         router.route === item.href
-                          ? "border-indigo-500 text-gray-900"
+                          ? "border-gray-500 text-gray-900"
                           : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
                       )}
                       aria-current={
