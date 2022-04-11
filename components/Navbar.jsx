@@ -192,7 +192,7 @@ export default function Navbar({ title, description, children }) {
                 {/* <NextLink href="/login" passHref>
                   <Link> */}
                 <Box>
-                  <div className="bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl text-white hover:text-white mr-2 rounded-lg hover:bg-amber-500">
+                  <div className="bg-amber-500 px-2 pt-2 pb-2 space-y-1 sm:px-3 shadow-xl text-white hover:text-white mr-2 rounded-lg hover:bg-amber-500">
                     {userInfo ? (
                       <>
                         <Button
@@ -231,12 +231,14 @@ export default function Navbar({ title, description, children }) {
                       </>
                     ) : (
                       <NextLink href="/login" passHref>
-                        <Link>
-                          <ThemeProvider theme={theme}>
-                            <Typography variant="h6">
-                              🙍‍♀️ Please Login 👈
-                            </Typography>
-                          </ThemeProvider>
+                        <Link href="/login">
+                          <a href="/login">
+                            <ThemeProvider theme={theme}>
+                              <Typography variant="h6">
+                                🙍‍♀️ Please Login 👈
+                              </Typography>
+                            </ThemeProvider>
+                          </a>
                         </Link>
                       </NextLink>
                     )}
