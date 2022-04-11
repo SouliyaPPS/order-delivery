@@ -232,11 +232,13 @@ export default function Navbar({ title, description, children }) {
                     ) : (
                       <NextLink href="/login" passHref>
                         <Link href="/login">
-                          <ThemeProvider theme={theme}>
-                            <Typography variant="h6">
-                              🙍‍♀️ Please Login 👈
-                            </Typography>
-                          </ThemeProvider>
+                          <a>
+                            <ThemeProvider theme={theme}>
+                              <Typography variant="h6">
+                                🙍‍♀️ Please Login 👈
+                              </Typography>
+                            </ThemeProvider>
+                          </a>
                         </Link>
                       </NextLink>
                     )}
