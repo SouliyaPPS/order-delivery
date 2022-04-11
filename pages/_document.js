@@ -1,5 +1,5 @@
+import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import * as React from "react";
 import createEmotionServer from "@emotion/server/create-instance";
 import createCache from "@emotion/cache";
 // import createEmotionCache from "../utility/createEmotionCache";

@@ -36,7 +36,7 @@ export default function LoginScreen() {
   const { redirect } = router.query;
   useEffect(() => {
     if (userInfo) {
-      router.push(redirect || "/");
+      router.push(redirect || "/Home");
     }
   }, [router, userInfo, redirect]);
   const {
@@ -55,7 +55,7 @@ export default function LoginScreen() {
       });
       dispatch({ type: "USER_LOGIN", payload: data });
       jsCookie.set("userInfo", JSON.stringify(data));
-      router.push(redirect || "/");
+      router.push(redirect || "/Home");
     } catch (err) {
       enqueueSnackbar(getError(err), { variant: "error" });
     }
@@ -169,15 +169,7 @@ export default function LoginScreen() {
                       fullWidth
                       label="Password"
                       // inputProps={{ type: "password" }}
-                      error={Boolean(errors.password)}
-                      helperText={
-                        errors.password
-                          ? errors.password.type === "minLength"
-                            ? "Password length is more than 5"
-                            : "Password is required"
-                          : ""
-                      }
-                      {...field}
+
                       endAdornment={
                         <InputAdornment position="end">
                           <IconButton
@@ -194,6 +186,15 @@ export default function LoginScreen() {
                           </IconButton>
                         </InputAdornment>
                       }
+                      error={Boolean(errors.password)}
+                      hyperText={
+                        errors.password
+                          ? errors.password.type === "minLength"
+                            ? "Password length is more than 5"
+                            : "Password is required"
+                          : ""
+                      }
+                      {...field}
                     />
                   )}
                 ></Controller>
@@ -218,7 +219,7 @@ export default function LoginScreen() {
               <div className="font-medium text-lg">
                 Do not have an account ?{" "}
                 <NextLink
-                  href={`/register?redirect=${redirect || "/"}`}
+                  href={`/register?redirect=${redirect || "/Home"}`}
                   passHref
                 >
                   <Link underlineHover>

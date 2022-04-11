@@ -303,7 +303,10 @@ export default function RegisterScreen() {
             <ListItem>
               <div className="font-medium text-lg">
                 Already have an account?{" "}
-                <NextLink href={`/login?redirect=${redirect || "/"}`} passHref>
+                <NextLink
+                  href={`/login?redirect=${redirect || "/Home"}`}
+                  passHref
+                >
                   <Link>
                     <CustomLink color="primary">Login</CustomLink>
                   </Link>

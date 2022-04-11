@@ -1,8 +1,24 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import DarkMode from "../sections/DarkMode";
+import { Box, Button, Menu, MenuItem } from "@mui/material";
+import NextLink from "next/link";
+import classes from "../utility/classes";
+import { useContext, useState } from "react";
+import { Store } from "../utility/Store";
+import jsCookie from "js-cookie";
+import { withStyles } from "@material-ui/core/styles";
+import MuiLink from "@material-ui/core/Link";
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -10,14 +26,44 @@ function classNames(...classes) {
 
 const navigation = [
   { name: "🏠 Home", href: "/Home" },
-  { name: "🙍‍♀️ Login", href: "/login" },
-  { name: "💡 About", href: "/About" },
   { name: "📲 Contact", href: "/Contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ title, description, children }) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const { state, dispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const loginMenuCloseHandler = (e, redirect) => {
+    setAnchorEl(null);
+    if (redirect) {
+      router.push(redirect);
+    }
+  };
+  const loginClickHandler = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+  const logoutClickHandler = () => {
+    setAnchorEl(null);
+    dispatch({ type: "USER_LOGOUT" });
+    jsCookie.remove("userInfo");
+    jsCookie.remove("cartItems");
+    jsCookie.remove("shippingAddress");
+    jsCookie.remove("paymentMethod");
+    router.push("/Home");
+  };
+
+  const CustomLink = withStyles({
+    root: {
+      "&.MuiTypography-colorPrimary": {
+        color: "white",
+      },
+    },
+  })(MuiLink);
+
   return (
     <div>
       <nav className="fixed w-full z-10 ">
@@ -58,7 +104,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            <div className="mr-64 flex md:hidden ">
+            <div className="mr-64 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -143,7 +189,61 @@ export default function Navbar() {
                     </a>
                   </Link>
                 ))}
-
+                {/* <NextLink href="/login" passHref>
+                  <Link> */}
+                <Box>
+                  <div className="bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl text-white hover:text-white mr-2 rounded-lg hover:bg-amber-500">
+                    {userInfo ? (
+                      <>
+                        <Button
+                          aria-controls="simple-menu"
+                          aria-haspopup="true"
+                          sx={classes.navbarButton}
+                          onClick={loginClickHandler}
+                        >
+                          🙍‍♀️ {userInfo.name}
+                        </Button>
+                        <Menu
+                          id="simple-menu"
+                          anchorEl={anchorEl}
+                          keepMounted
+                          open={Boolean(anchorEl)}
+                          onClose={loginMenuCloseHandler}
+                        >
+                          <MenuItem
+                            onClick={(e) =>
+                              loginMenuCloseHandler(e, "/profile")
+                            }
+                          >
+                            Profile
+                          </MenuItem>
+                          <MenuItem
+                            onClick={(e) =>
+                              loginMenuCloseHandler(e, "/order-history")
+                            }
+                          >
+                            Order History
+                          </MenuItem>
+                          <MenuItem onClick={logoutClickHandler}>
+                            Logout
+                          </MenuItem>
+                        </Menu>
+                      </>
+                    ) : (
+                      <NextLink href="/login" passHref>
+                        <Link>
+                          <ThemeProvider theme={theme}>
+                            <Typography variant="h6">
+                              🙍‍♀️ Please Login 👈
+                            </Typography>
+                          </ThemeProvider>
+                        </Link>
+                      </NextLink>
+                    )}
+                  </div>
+                </Box>
+                {/* </Link>
+                </NextLink> */}
                 <DarkMode />
               </div>
             </div>
