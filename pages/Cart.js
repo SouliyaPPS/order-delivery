@@ -11,17 +11,10 @@ import {
   ListItem,
   MenuItem,
   Select,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   Typography,
 } from "@mui/material";
 import axios from "axios";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { useSnackbar } from "notistack";
