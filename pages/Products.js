@@ -1,28 +1,5 @@
 import React from "react";
-import { createTheme } from "@mui/material/styles";
-import {
-  AppBar,
-  Badge,
-  Box,
-  Button,
-  Container,
-  CssBaseline,
-  Divider,
-  Drawer,
-  IconButton,
-  InputBase,
-  Link,
-  List,
-  ListItem,
-  ListItemText,
-  Menu,
-  MenuItem,
-  Switch,
-  ThemeProvider,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Badge, Link } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
 import CountCartStyles from "../styles/CountCart.module.css";
@@ -30,21 +7,19 @@ import styles from "../styles/ListProducts.module.css";
 import ListProducts from "./ListProducts";
 import Footer from "../components/Footer";
 import NextLink from "next/link";
-import classes from "../utility/classes";
 import { useContext, useEffect, useState } from "react";
 import { Store } from "../utility/Store";
-import jsCookie from "js-cookie";
-import { useRouter } from "next/router";
+
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { getError } from "../utility/error";
 
-export default function Products({ title, description, children }) {
-  const { state, dispatch } = useContext(Store);
-  const { cart, userInfo } = state;
+export default function Products() {
+  const { state } = useContext(Store);
+  const { cart } = state;
 
   const { enqueueSnackbar } = useSnackbar();
-  const [categories, setCategories] = useState([]);
+  const [setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
       try {
