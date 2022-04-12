@@ -412,8 +412,8 @@ function PlaceOrderScreen() {
                       style={{
                         borderRadius: 35,
                         backgroundColor: "#ED9025",
-                        padding: "6px 12px",
-                        fontSize: "12px",
+                        padding: "5px 10px",
+                        fontSize: "15px",
                         fontWeight: "bold",
                       }}
                     >
