@@ -2,7 +2,6 @@
 // import { CacheProvider } from "@emotion/react";
 // import {ThemeProvider, CssBaseline } from "@mui/material";
 // import "../styles/application.scss";
-
 import React from "react";
 import PropTypes from "prop-types";
 import createEmotionCache from "../utility/createEmotionCache";
@@ -23,7 +22,7 @@ const clientSideEmotionCache = createEmotionCache();
 // }
 
 const MyApp = (props) => {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const { Component = clientSideEmotionCache, pageProps } = props;
 
   return (
     // <CacheProvider value={emotionCache}>

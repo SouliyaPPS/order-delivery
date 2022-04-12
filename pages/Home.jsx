@@ -83,7 +83,7 @@ function Home() {
                 className="mx-auto "
               />
               <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
-                <h4 align="center">Facebook </h4>
+                <h4 align="center">Facebook</h4>
               </h1>
             </a>
           </div>

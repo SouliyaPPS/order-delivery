@@ -3,19 +3,12 @@ import styles from "../styles/ListProducts.module.css";
 import CartProducts from "../components/CartProducts";
 import { useContext, useEffect, useState } from "react";
 import { Alert, CircularProgress, Grid } from "@mui/material";
-import { makeStyles } from "@material-ui/core/styles";
 import { Store } from "../utility/Store";
 import { urlForThumbnail } from "../utility/image";
 import client from "../utility/client";
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import { useRouter } from "next/router";
-
-const useStyles = makeStyles((theme) => ({
-  marginAutoItem: {
-    margin: "auto",
-  },
-}));
 
 function ListProducts() {
   const {
@@ -68,8 +61,6 @@ function ListProducts() {
     });
     router.push("/Cart");
   };
-
-  const classes = useStyles();
 
   return (
     <>

@@ -45,12 +45,13 @@ export default function A2HS() {
     setCurrentIndex(count);
     slideRef.current.classList.add("fade-anim");
   };
-  const handleOnPrevClick = () => {
-    const productsLength = featuredProducts.length;
-    count = (currentIndex + productsLength - 1) % productsLength;
-    setCurrentIndex(count);
-    slideRef.current.classList.add("fade-anim");
-  };
+
+  // const handleOnPrevClick = () => {
+  //   const productsLength = featuredProducts.length;
+  //   count = (currentIndex + productsLength - 1) % productsLength;
+  //   setCurrentIndex(count);
+  //   slideRef.current.classList.add("fade-anim");
+  // };
 
   return (
     <div ref={slideRef} className="relative w-full select-none">

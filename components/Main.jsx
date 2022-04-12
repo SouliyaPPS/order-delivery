@@ -30,7 +30,7 @@ function Main() {
     });
   }, []);
 
-  const handleInstallClick = (e) => {
+  const handleInstallClick = () => {
     // Hide the app provided install promotion
     // setInstallable(true);
     // Show the install prompt

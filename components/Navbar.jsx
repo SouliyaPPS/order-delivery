@@ -8,8 +8,7 @@ import classes from "../utility/classes";
 import { useContext, useState } from "react";
 import { Store } from "../utility/Store";
 import jsCookie from "js-cookie";
-import { withStyles } from "@material-ui/core/styles";
-import MuiLink from "@material-ui/core/Link";
+
 import {
   createTheme,
   responsiveFontSizes,
@@ -29,11 +28,11 @@ const navigation = [
   { name: "📲 Contact", href: "/Contact" },
 ];
 
-export default function Navbar({ title, description, children }) {
+export default function Navbar() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const { state, dispatch } = useContext(Store);
-  const { cart, userInfo } = state;
+  const { userInfo } = state;
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -55,14 +54,6 @@ export default function Navbar({ title, description, children }) {
     jsCookie.remove("paymentMethod");
     router.push("/Home");
   };
-
-  const CustomLink = withStyles({
-    root: {
-      "&.MuiTypography-colorPrimary": {
-        color: "white",
-      },
-    },
-  })(MuiLink);
 
   return (
     <div>
