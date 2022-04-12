@@ -68,12 +68,15 @@ export default function ShippingScreen() {
           />
         </h3>
       </div>
+      
       <h3 className={styles.title}>
         <Typography component="h4" variant="h4">
           Shipping Address
         </Typography>
       </h3>
+
       <br />
+
       <LayoutDetails title="Shipping Address">
         <CheckoutWizard activeStep={1}></CheckoutWizard>
         <Form onSubmit={handleSubmit(submitHandler)}>

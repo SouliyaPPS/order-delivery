@@ -37,7 +37,7 @@ export default function RegisterScreen() {
 
   useEffect(() => {
     if (userInfo) {
-      router.push(redirect || "/");
+      router.push(redirect || "/Home");
     }
   }, [router, userInfo, redirect]);
 
@@ -62,7 +62,7 @@ export default function RegisterScreen() {
       });
       dispatch({ type: "USER_LOGIN", payload: data });
       jsCookie.set("userInfo", JSON.stringify(data));
-      router.push(redirect || "/");
+      router.push(redirect || "/Home");
     } catch (err) {
       enqueueSnackbar(getError(err), { variant: "error" });
     }
@@ -307,7 +307,7 @@ export default function RegisterScreen() {
               <div className="font-medium text-lg">
                 Already have an account?{" "}
                 <NextLink
-                  href={`/login?redirect=${redirect || "/Home"}`}
+                  href={`/login?redirect=${redirect || "/Login"}`}
                   passHref
                 >
                   <Link>
