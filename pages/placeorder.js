@@ -406,7 +406,7 @@ function PlaceOrderScreen() {
                         borderRadius: 35,
                         backgroundColor: "#ED9025",
                         padding: "5px 10px",
-                        fontSize: "15px",
+                        fontSize: "16px",
                         fontWeight: "bold",
                       }}
                     >
