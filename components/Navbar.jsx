@@ -8,6 +8,7 @@ import classes from "../utility/classes";
 import { useContext, useState } from "react";
 import { Store } from "../utility/Store";
 import jsCookie from "js-cookie";
+import SearchBox from "./SearchBox";
 
 import {
   createTheme,
@@ -237,6 +238,11 @@ export default function Navbar() {
                 </Box>
                 {/* </Link>
                 </NextLink> */}
+                <Box>
+                  <div className="px-2 pt-2 pb-2 space-y-1 sm:px-3 shadow-xl text-white hover:text-white mr-2 rounded-lg hover:bg-amber-500">
+                    <SearchBox title="search" />
+                  </div>
+                </Box>
                 <DarkMode />
               </div>
             </div>

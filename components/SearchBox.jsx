@@ -57,7 +57,6 @@ const SearchBox = ({ children }) => {
   };
   return (
     <>
-      {children}
       {/* Search MUI */}
       <div className="flex item-center justify-center">
         <form onSubmit={submitHandler}>
@@ -92,6 +91,8 @@ const SearchBox = ({ children }) => {
               onChange={queryChangeHandler}
               onSubmit={submitHandler}
             />
+            {children}
+
             <IconButton
               type="submit"
               sx={classes.searchButton}

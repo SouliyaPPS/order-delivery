@@ -28,7 +28,6 @@ import Tabs from "../components/Tabs";
 import NextLink from "next/link";
 import styles from "../styles/ListProducts.module.css";
 import CountCartStyles from "../styles/CountCart.module.css";
-import SearchBox from "./SearchBox";
 
 const prices = [
   {
@@ -218,7 +217,7 @@ export default function SearchScreen() {
       </div>
 
       <LayoutDetails title="search">
-        <SearchBox title="search"></SearchBox>
+        {/* <SearchBox title="search"></SearchBox> */}
         <Grid sx={classes.section} container spacing={2}>
           <div className="flex item-center w-full justify-center">
             <Grid item md={3}>
@@ -230,6 +229,7 @@ export default function SearchScreen() {
                       fullWidth
                       value={category}
                       onChange={categoryHandler}
+                      style={{ height: "40px" }}
                     >
                       <MenuItem value="all" style={{ fontSize: 18 }}>
                         All
@@ -250,7 +250,13 @@ export default function SearchScreen() {
                 <ListItem>
                   <Box sx={classes.fullWidth}>
                     <Typography style={{ fontSize: 18 }}>Prices</Typography>
-                    <Select value={price} onChange={priceHandler} fullWidth>
+
+                    <Select
+                      style={{ height: "40px" }}
+                      value={price}
+                      onChange={priceHandler}
+                      fullWidth
+                    >
                       <MenuItem value="all" style={{ fontSize: 18 }}>
                         All
                       </MenuItem>
@@ -269,7 +275,12 @@ export default function SearchScreen() {
                 <ListItem>
                   <Box sx={classes.fullWidth}>
                     <Typography style={{ fontSize: 18 }}>Ratings</Typography>
-                    <Select value={rating} onChange={ratingHandler} fullWidth>
+                    <Select
+                      style={{ height: "40px" }}
+                      value={rating}
+                      onChange={ratingHandler}
+                      fullWidth
+                    >
                       <MenuItem value="all" style={{ fontSize: 18 }}>
                         All
                       </MenuItem>
@@ -322,7 +333,7 @@ export default function SearchScreen() {
                     <Select
                       value={sort}
                       onChange={sortHandler}
-                      style={{ fontSize: 17 }}
+                      style={{ fontSize: 17, height: "40px" }}
                     >
                       <MenuItem value="default" style={{ fontSize: 17 }}>
                         Default
