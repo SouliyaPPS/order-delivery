@@ -64,6 +64,7 @@ function OrderHistoryScreen() {
     };
     fetchOrders();
   }, [router, userInfo]);
+  
   return (
     <>
       <Navbar className="fixed top-0 left-0 right-0 inset-x-0 z-30 " />

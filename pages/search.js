@@ -9,6 +9,8 @@ import {
   Rating,
   Select,
   Typography,
+  Link,
+  Badge,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
@@ -21,19 +23,25 @@ import classes from "../utility/classes";
 import client from "../utility/client";
 import { urlForThumbnail } from "../utility/image";
 import { Store } from "../utility/Store";
+import Navbar from "../components/Navbar";
+import Tabs from "../components/Tabs";
+import NextLink from "next/link";
+import styles from "../styles/ListProducts.module.css";
+import CountCartStyles from "../styles/CountCart.module.css";
+import SearchBox from "./SearchBox";
 
 const prices = [
   {
-    name: "$1 to $50",
-    value: "1-50",
+    name: "100.000 to 150.000 Kip",
+    value: "100000-150000",
   },
   {
-    name: "$51 to $200",
-    value: "51-200",
+    name: "200.000 to 250.000 Kip",
+    value: "200000-250000",
   },
   {
-    name: "$201 to $1000",
-    value: "201-1000",
+    name: "300.000 to 350.000 Kip",
+    value: "300000-350000",
   },
 ];
 
@@ -102,7 +110,7 @@ export default function SearchScreen() {
       }
     };
     fetchData();
-  }, [category, price, query, rating, sort]);
+  }, [category, price, rating, sort]);
 
   const filterSearch = ({ category, sort, searchQuery, price, rating }) => {
     const path = router.pathname;
@@ -160,105 +168,222 @@ export default function SearchScreen() {
     enqueueSnackbar(`${product.name} added to the cart`, {
       variant: "success",
     });
-    router.push("/cart");
+    router.push("/Cart");
   };
 
   return (
-    <LayoutDetails title="search">
-      <Grid sx={classes.section} container spacing={2}>
-        <Grid item md={3}>
-          <List>
-            <ListItem>
-              <Box sx={classes.fullWidth}>
-                <Typography>Categories</Typography>
-                <Select fullWidth value={category} onChange={categoryHandler}>
-                  <MenuItem value="all">All</MenuItem>
-                  {categories &&
-                    categories.map((category) => (
-                      <MenuItem key={category} value={category}>
-                        {category}
+    <div>
+      <Navbar className="fixed top-0 left-0 right-0 inset-x-0 z-30 " />
+
+      <NextLink href="/Cart" passHref>
+        <Link href="/Cart" className={styles.link}>
+          <div className="fixed top-0 left-44 inset-x-6 z-30 ">
+            <div className={CountCartStyles.col}>
+              <div className={CountCartStyles.cart}>
+                <img
+                  src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cart-supermarket-flatart-icons-flat-flatarticons.png"
+                  width={25}
+                  height={25}
+                  alt="CountCart"
+                  className="items-left mx-auto"
+                />
+                <div className={CountCartStyles.counter} component="span">
+                  {cart.cartItems.length > 0 ? (
+                    <Badge
+                      style={{
+                        backgroundColor: "orange",
+                      }}
+                      badgeContent={cart.cartItems.length}
+                    ></Badge>
+                  ) : (
+                    "0"
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </NextLink>
+
+      <div className={styles.container}>
+        <h3 className={styles.title}>
+          <img
+            className="items-center mx-auto"
+            src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/sIL81wOFbRA8cH4Q2JDw.png"
+            alt="Landscape picture"
+            width={55}
+            height={55}
+          />
+        </h3>
+      </div>
+
+      <LayoutDetails title="search">
+        <SearchBox title="search"></SearchBox>
+        <Grid sx={classes.section} container spacing={2}>
+          <div className="flex item-center w-full justify-center">
+            <Grid item md={3}>
+              <List>
+                <ListItem>
+                  <Box sx={classes.fullWidth}>
+                    <Typography style={{ fontSize: 18 }}>Categories</Typography>
+                    <Select
+                      fullWidth
+                      value={category}
+                      onChange={categoryHandler}
+                    >
+                      <MenuItem value="all" style={{ fontSize: 18 }}>
+                        All
                       </MenuItem>
-                    ))}
-                </Select>
-              </Box>
-            </ListItem>
-            <ListItem>
-              <Box sx={classes.fullWidth}>
-                <Typography>Prices</Typography>
-                <Select value={price} onChange={priceHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
-                  {prices.map((price) => (
-                    <MenuItem key={price.value} value={price.value}>
-                      {price.name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Box>
-            </ListItem>
-            <ListItem>
-              <Box sx={classes.fullWidth}>
-                <Typography>Ratings</Typography>
-                <Select value={rating} onChange={ratingHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
-                  {ratings.map((rating) => (
-                    <MenuItem dispaly="flex" key={rating} value={rating}>
-                      <Rating value={rating} readOnly />
-                      <Typography component="span">&amp; Up</Typography>
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Box>
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item md={9}>
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item>
-              {products && products.length !== 0 ? products.length : "No"}{" "}
-              Results
-              {query !== "all" && query !== "" && " : " + query}
-              {price !== "all" && " : Price " + price}
-              {rating !== "all" && " : Rating " + rating + " & up"}
-              {(query !== "all" && query !== "") ||
-              rating !== "all" ||
-              price !== "all" ? (
-                <Button onClick={() => router.push("/search")}>X</Button>
-              ) : null}
+                      {categories &&
+                        categories.map((category) => (
+                          <MenuItem
+                            key={category}
+                            value={category}
+                            style={{ fontSize: 18 }}
+                          >
+                            {category}
+                          </MenuItem>
+                        ))}
+                    </Select>
+                  </Box>
+                </ListItem>
+                <ListItem>
+                  <Box sx={classes.fullWidth}>
+                    <Typography style={{ fontSize: 18 }}>Prices</Typography>
+                    <Select value={price} onChange={priceHandler} fullWidth>
+                      <MenuItem value="all" style={{ fontSize: 18 }}>
+                        All
+                      </MenuItem>
+                      {prices.map((price) => (
+                        <MenuItem
+                          key={price.value}
+                          value={price.value}
+                          style={{ fontSize: 18 }}
+                        >
+                          {price.name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </ListItem>
+                <ListItem>
+                  <Box sx={classes.fullWidth}>
+                    <Typography style={{ fontSize: 18 }}>Ratings</Typography>
+                    <Select value={rating} onChange={ratingHandler} fullWidth>
+                      <MenuItem value="all" style={{ fontSize: 18 }}>
+                        All
+                      </MenuItem>
+                      {ratings.map((rating) => (
+                        <MenuItem
+                          dispaly="flex"
+                          key={rating}
+                          value={rating}
+                          style={{ fontSize: 18 }}
+                        >
+                          <Rating value={rating} readOnly />
+                          <Typography component="span">&amp; Up</Typography>
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </ListItem>
+              </List>
             </Grid>
+          </div>
 
-            <Grid item>
-              <Typography component="span" sx={classes.sort}>
-                Sort by
-              </Typography>
-              <Select value={sort} onChange={sortHandler}>
-                <MenuItem value="default">Default</MenuItem>
-                <MenuItem value="lowest">Price: Low to High</MenuItem>
-                <MenuItem value="highest">Price: High to Low</MenuItem>
-                <MenuItem value="toprated">Customer Reviews</MenuItem>
-              </Select>
-            </Grid>
-          </Grid>
-
-          <Grid sx={classes.section} container spacing={3}>
-            {loading ? (
-              <CircularProgress />
-            ) : error ? (
-              <Alert>{error}</Alert>
-            ) : (
-              <Grid container spacing={3}>
-                {products.map((product) => (
-                  <Grid item md={4} key={product.name}>
-                    <CartProducts
-                      product={product}
-                      addToCartHandler={addToCartHandler}
-                    />
+          <div className="ml-4 flex item-center w-full justify-center">
+            <Grid item md={9}>
+              <div className="mr-10 ml-10">
+                <Grid
+                  container
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Grid item style={{ fontSize: 20, fontWeight: "bold" }}>
+                    {products && products.length !== 0 ? products.length : "No"}{" "}
+                    Results
+                    {query !== "all" && query !== "" && " : " + query}
+                    {price !== "all" && " : Price " + price}
+                    {rating !== "all" && " : Rating " + rating + " & up"}
+                    {(query !== "all" && query !== "") ||
+                    rating !== "all" ||
+                    price !== "all" ? (
+                      <Button onClick={() => router.push("/search")}>X</Button>
+                    ) : null}
                   </Grid>
-                ))}
-              </Grid>
-            )}
-          </Grid>
+                  <Grid item>
+                    <Typography
+                      component="span"
+                      sx={classes.sort}
+                      style={{ fontSize: 17 }}
+                    >
+                      Sort by
+                    </Typography>
+                    <Select
+                      value={sort}
+                      onChange={sortHandler}
+                      style={{ fontSize: 17 }}
+                    >
+                      <MenuItem value="default" style={{ fontSize: 17 }}>
+                        Default
+                      </MenuItem>
+                      <MenuItem value="lowest" style={{ fontSize: 17 }}>
+                        Price: Low to High
+                      </MenuItem>
+                      <MenuItem value="highest" style={{ fontSize: 17 }}>
+                        Price: High to Low
+                      </MenuItem>
+                      <MenuItem value="toprated" style={{ fontSize: 17 }}>
+                        Customer Reviews
+                      </MenuItem>
+                    </Select>
+                  </Grid>
+                </Grid>
+              </div>
+
+              <br />
+              <div className={styles.cardList}>
+                {/* <Grid sx={classes.section} container spacing={3}> */}
+                {loading ? (
+                  <CircularProgress />
+                ) : error ? (
+                  <Alert variant="danger">{error}</Alert>
+                ) : (
+                  <Grid
+                    className="mr-8 justify-center"
+                    container
+                    rowSpacing={2}
+                    columnSpacing={{ xs: 1, sm: 1, md: 3 }}
+                    spacing={2}
+                    justify="center"
+                  >
+                    {products.map((product) => (
+                      <Grid
+                        item
+                        // md={10}
+                        key={(product.name, product.description)}
+                      >
+                        <CartProducts
+                          product={product}
+                          addToCartHandler={addToCartHandler}
+                        />
+                      </Grid>
+                    ))}
+                  </Grid>
+                )}
+                {/* </Grid> */}
+              </div>
+              <div>
+                <h6 className="my-px px-1 sm:px-1 pb-24"></h6>
+              </div>
+            </Grid>
+          </div>
         </Grid>
-      </Grid>
-    </LayoutDetails>
+      </LayoutDetails>
+
+      <div className="fixed top-0 left-0 right-77 inset-x-0">
+        <Tabs />
+      </div>
+    </div>
   );
 }

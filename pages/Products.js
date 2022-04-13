@@ -1,5 +1,13 @@
 import React from "react";
-import { Badge, Link, MenuItem, Select } from "@mui/material";
+import {
+  Badge,
+  Link,
+  MenuItem,
+  Select,
+  Box,
+  InputBase,
+  IconButton,
+} from "@mui/material";
 import Navbar from "../components/Navbar";
 import Tabs from "../components/Tabs";
 import CountCartStyles from "../styles/CountCart.module.css";
@@ -13,6 +21,8 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { getError } from "../utility/error";
+import classes from "../utility/classes";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Products() {
   const router = useRouter();
@@ -109,10 +119,18 @@ export default function Products() {
       </div>
 
       {/* Search Box */}
-      <div className={styles.cardList}>
+      {/* <div className={styles.cardList}>
         <div className="mt-1 rounded-md inset-y-0 left-0 pl-2 flex items-center text-black">
           <div className=" bg-white rounded flex items-center w-full p-3 shadow-sm border border-gray-200">
-            <button className="outline-none focus:outline-none">
+            <button
+              className="outline-none focus:outline-none"
+              type="submit"
+              sx={classes.searchButton}
+              aria-label="search"
+              name="query"
+              placeholder="Search products"
+              onChange={queryChangeHandler}
+            >
               <svg
                 className="w-5 mx-auto text-gray-600 h-5 cursor-pointer"
                 fill="none"
@@ -123,20 +141,26 @@ export default function Products() {
                 viewBox="0 0 24 24"
                 onSubmit={submitHandler}
                 onChange={queryChangeHandler}
+                type="submit"
+                sx={classes.searchButton}
+                aria-label="search"
               >
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
-            <input
-              onSubmit={submitHandler}
-              onChange={queryChangeHandler}
-              type="search"
-              name
-              id
-              placeholder="search"
-              x-model="q"
-              className="w-full pl-4 pr-8 text-sm outline-none focus:outline-none bg-transparent mx-auto"
-            />
+            <Box sx={classes.searchForm}>
+              <input
+                onSubmit={submitHandler}
+                name="query"
+                sx={classes.searchInput}
+                placeholder="Search products"
+                onChange={queryChangeHandler}
+                type="search"
+                id
+                x-model="q"
+                className="w-full pl-4 pr-8 text-sm outline-none focus:outline-none bg-transparent mx-auto"
+              />
+            </Box>
             <div className="select mx-auto">
               <Select
                 fullWidth
@@ -162,8 +186,54 @@ export default function Products() {
         </div>
       </div>
 
-      <br />
+      <br /> */}
       {/* Search Box end*/}
+
+      {/* Search MUI */}
+      <div className="flex item-center justify-center">
+        <form onSubmit={submitHandler}>
+          <Box sx={classes.searchForm}>
+            <IconButton>
+              <div className="select mx-auto">
+                <Select
+                  fullWidth
+                  style={{ height: "30px" }}
+                  value={category}
+                  onChange={categoryHandler}
+                >
+                  <MenuItem value="all">All</MenuItem>
+                  {categories.map((category) => (
+                    <NextLink
+                      key={category}
+                      href={`/search?category=${category}`}
+                      passHref
+                    >
+                      <MenuItem key={category} value={category}>
+                        {category}
+                      </MenuItem>
+                    </NextLink>
+                  ))}
+                </Select>
+              </div>
+            </IconButton>
+            <InputBase
+              name="query"
+              sx={classes.searchInput}
+              placeholder="Search products"
+              onChange={queryChangeHandler}
+            />
+            <IconButton
+              type="submit"
+              sx={classes.searchButton}
+              aria-label="search"
+              style={{ color: "white" }}
+            >
+              <SearchIcon />
+            </IconButton>
+          </Box>
+        </form>
+      </div>
+      {/* Search MUI END */}
 
       <div className="grid -z-50">
         <ListProducts />
@@ -176,3 +246,4 @@ export default function Products() {
     </div>
   );
 }
+
