@@ -23,6 +23,7 @@
     "@mui/material": "^5.5.3",
     "@mui/styled-engine-sc": "^5.5.2",
     "@mui/x-data-grid": "^5.7.0",
+    "@paypal/react-paypal-js": "^7.6.0",
     "@popperjs/core": "2.11.0",
     "@reduxjs/toolkit": "^1.8.0",
     "@sanity/client": "^3.3.0",

@@ -40,7 +40,7 @@ function PlaceOrderScreen() {
   );
   // const shippingPrice = itemsPrice > 200 ? 0 : 15;
   const shippingPrice = 10000;
-  const taxPrice = round2(itemsPrice * 0.15);
+  // const taxPrice = round2(itemsPrice * 0.15);
   // const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
   const totalPrice = round2(itemsPrice + shippingPrice);
 
@@ -49,7 +49,7 @@ function PlaceOrderScreen() {
       router.push("/payment");
     }
     if (cartItems.length === 0) {
-      router.push("/cart");
+      router.push("/Cart");
     }
   }, [cartItems, paymentMethod, router]);
 
@@ -68,7 +68,7 @@ function PlaceOrderScreen() {
           paymentMethod,
           itemsPrice,
           shippingPrice,
-          taxPrice,
+          // taxPrice,
           totalPrice,
         },
         {
@@ -412,14 +412,13 @@ function PlaceOrderScreen() {
                     >
                       Place Order
                     </Button>
+                    {loading && (
+                      <ListItem>
+                        <CircularProgress />
+                      </ListItem>
+                    )}
                   </ListItem>
                 </div>
-
-                {loading && (
-                  <ListItem>
-                    <CircularProgress />
-                  </ListItem>
-                )}
               </List>
             </Card>
           </Grid>
