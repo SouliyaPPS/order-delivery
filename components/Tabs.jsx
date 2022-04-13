@@ -56,7 +56,7 @@ function Tabs() {
             </Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/Chat" className={styles.link}>
+            <Link href="https://wa.me/+8562023564154" className={styles.link}>
               <a className={styles.link}>
                 <img
                   src="https://img.icons8.com/plasticine/100/000000/chat--v2.png"
