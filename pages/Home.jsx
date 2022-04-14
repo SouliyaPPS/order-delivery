@@ -34,8 +34,8 @@ function Home() {
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/8WnqA9977lkEYXg0QIel.jpg"
               alt="STAR COLLECTION"
-              width={80}
-              height={80}
+              width={85}
+              height={85}
               className="mx-auto object-center object-cover rounded-xl"
             />
             <h1 className="my-px text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
@@ -52,8 +52,8 @@ function Home() {
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/WHF9ohUUZwiYL6Hv6NiW.jpg"
               alt="MOON COLLECTIONS"
-              width={80}
-              height={80}
+              width={85}
+              height={85}
               className="mx-auto object-center object-cover rounded-xl"
             />
             <h1 className="my-px text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
@@ -71,8 +71,8 @@ function Home() {
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/txOpgkJ37U56Y1B8UN66.jpg"
               alt="FABRIC SCRAP"
-              width={80}
-              height={80}
+              width={85}
+              height={85}
               className="mx-auto object-center object-cover rounded-xl"
             />
             <h1 className="my-px text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
