@@ -24,39 +24,39 @@ function Home() {
         className="mx-auto"
       />
 
-      <div className="mt-2 pr-4 flex justify-center">
-        <div className="rounded-md">
+      <div className="mt-2 pr-4 space-x-1 flex justify-center">
+        <div className="rounded-xl">
           <a
-            href="https://www.facebook.com/"
+            href="https://re-craft.vercel.app/search?category=STAR%20COLLECTION"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/8WnqA9977lkEYXg0QIel.jpg"
               alt="STAR COLLECTION"
-              width={70}
-              height={70}
+              width={80}
+              height={80}
               className="mx-auto object-center object-cover rounded-xl"
             />
-            <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+            <h1 className="my-px text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
               <h4 align="center">STAR COLLECTION</h4>
             </h1>
           </a>
         </div>
         <div className="rounded-xl">
           <a
-            href="https://www.instagram.com/"
+            href="https://re-craft.vercel.app/search?category=MOON+COLLECTION"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/WHF9ohUUZwiYL6Hv6NiW.jpg"
               alt="MOON COLLECTION"
-              width={70}
-              height={70}
+              width={80}
+              height={80}
               className="mx-auto object-center object-cover rounded-xl"
             />
-            <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+            <h1 className="my-px text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
               <h4 align="center">MOON COLLECTION</h4>
             </h1>
           </a>
@@ -64,18 +64,18 @@ function Home() {
 
         <div className="rounded-md">
           <a
-            href="https://wa.me/+8562023564154"
+            href="https://re-craft.vercel.app/search?category=FABRIC+SCRAP"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/1VgavaYVt6bjm3vpJakt/pub/txOpgkJ37U56Y1B8UN66.jpg"
               alt="FABRIC SCRAP"
-              width={70}
-              height={70}
+              width={80}
+              height={80}
               className="mx-auto object-center object-cover rounded-xl"
             />
-            <h1 className="my-px px-2 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
+            <h1 className="my-px text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-600 font-medium">
               <h4 align="center">FABRIC SCRAP</h4>
             </h1>
           </a>

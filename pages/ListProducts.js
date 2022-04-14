@@ -92,7 +92,7 @@ function ListProducts() {
             justify="center"
           >
             {products.map((product) => (
-              <Grid item md={2} key={product.slug}>
+              <Grid item key={product.slug}>
                 <CartProducts
                   product={product}
                   addToCartHandler={addToCartHandler}
